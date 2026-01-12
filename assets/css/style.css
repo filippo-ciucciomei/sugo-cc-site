@@ -1,0 +1,313 @@
+/* LAYOUT GUIDES */
+
+.row div {
+    /* border: 1px solid black; */
+}
+
+/* FONTS */
+@font-face {
+    font-family: "ABCP3rman3nt";
+    src: url("../fonts/ABCP3rman3nt-Book.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ABCROM";
+    src: url("../fonts/ABCROM-Book.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* PALETTE */
+
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #000000;
+    --sugo-color: #FD0021;
+    --secondary-color: #902A2A;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #ffffff !important;
+}
+
+.nav-center {
+    position: relative; /* Ensure normal flow positioning */
+    display: flex; /* Ensure nav-item links are laid out horizontally */
+    gap: 1rem; /* Add spacing between links */
+}
+
+/* Keep logo and basket shopping icon at edges */
+.navbar .navbar-brand {
+    position: absolute; /* Ignore its position in the main flow */
+    left: 15px;
+}
+
+.navbar-brand img {
+    width: 120px !important;
+}
+
+.basket-icon {
+    position: absolute; /* Ensure normal flow positioning */
+    right: 15px;
+    font-size: 2rem;
+}
+
+#basket-count {
+    font-size: 1rem;
+}
+
+.bg-light {
+    background-color: #ffffff !important;
+}
+
+.nav-item {
+    font-family: "ABCROM";
+    font-size: 2rem !important;
+    margin-right: 7px !important;
+    margin-left: 7px !important;
+    color: var(--secondary-color)
+}
+
+.active {
+    color: var(--sugo-color) !important;
+}
+
+.outer-span {
+    position: relative !important;
+    top: 10px !important;
+}
+
+.navbar img {
+    width: 160px;
+    height: auto;
+}
+
+/* GENERAL STYLE */
+
+main {
+    margin-top: 10px;
+}
+
+#contacts-social {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;    
+    z-index: 1000;
+
+}
+
+#contacts-social i {
+    text-decoration: none !important;
+    color: #000000 !important;
+}
+
+/* MANIFESTO */
+
+.manifesto-container {
+    background: white;
+    z-index: 1;
+}
+
+.manifesto-column {
+    border-radius: 8px;
+    border: var(--sugo-color) 2px solid;
+    height: 85vh;
+    overflow: scroll;
+}
+
+.manifesto-side-panel {
+    background-color: #ffffff !important;
+    z-index: 999;
+}
+
+.manifesto-container h1,
+.manifesto-container h4,
+.manifesto-container p,
+#store-control div {
+    mix-blend-mode: difference;
+    color: #ffffff
+}
+
+/* STORE PAGE */
+
+#store-control {
+    position: absolute;
+    right: 40px;
+    top: 47vh;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 1.5rem;
+    border: #000000 1px solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+
+/* Floating cards container */
+#floating-cards-container,
+.manifesto-container,
+.store-item-container {
+    position: relative;
+    height: calc(100vh - 75px);
+    width: 100%;
+    overflow: scroll;
+    transition: overflow 0.3s ease;
+    background-image: url("../images/sugo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* When the container is in grid mode */
+.grid-layout #floating-cards-container {
+    overflow: scroll;
+}
+
+/* floating cards */
+
+.card {
+    border: none !important;
+    background-color: transparent;
+    width: 12rem !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Floating cards use absolute positioning */
+.floating-card {
+    position: absolute;
+}
+
+/* Reset to grid layout */
+.grid-enable {
+    position: static;
+    transform: none !important;
+}
+
+/* --- STORE ITEM --- */
+
+/* Store gallery */
+
+.store-gallery,
+.store-features {
+    height: 80vh;
+}
+
+/* store accordion */
+
+.accordion-button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 4px;
+    font-size: 1.5rem;
+    color: #000000
+}
+
+.accordion-button:not(.collapsed) {
+    background: none;
+}
+
+.accordion-header {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.accordion-body {
+    font-size: 2rem;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-collapse {
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+/* ===================================================== */
+/* === ADDITIONS FOR LOGO LAYER + BLEND FIX (SAFE) ===== */
+/* ===================================================== */
+
+/* isolate blending ONLY where needed */
+#floating-cards-container {
+    isolation: isolate;
+}
+
+/* visual logo layer (does not affect layout or JS) */
+.sugo-logo-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/sugo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    pointer-events: none;
+    /* opacity: 0.3; */
+}
+
+/* cards behind / ahead of logo */
+.behind-logo {
+    z-index: 50;
+}
+
+.ahead-logo {
+    z-index: 150;
+}
+
+/* ensure blend text sits above logo */
+.card p,
+#store-control div,
+.manifesto-container h1,
+.manifesto-container h4,
+.manifesto-container p {
+    position: relative;
+    z-index: 200;
+    font-weight: 600;
+}
+
+
+
+/* ------------------- Contact Modal & Toast------------------- */
+ #toastMessage {
+    z-index: 11;
+  }
+
+  .modal-header {
+    background-color: #004d00;
+  }
+
+  .modal-title {
+    color: #ffffff;
+    font-weight: 600;
+  }       
+
+  .form-control {
+    width: 250px !important;
+  }
+
+  .modal-body {
+        background: url("../images/christmas-background.webp") center 7% / cover no-repeat;
+  }
