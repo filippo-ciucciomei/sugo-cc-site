@@ -30,14 +30,17 @@
 
 /* NAVBAR */
 
-.navbar {
-    background-color: #ffffff !important;
+.navbar,
+.navbar-light  {
+    background-color: rgba(255, 255, 255, 0) !important;
+    z-index: 1000;
 }
 
 .nav-center {
     position: relative; /* Ensure normal flow positioning */
     display: flex; /* Ensure nav-item links are laid out horizontally */
     gap: 1rem; /* Add spacing between links */
+    
 }
 
 /* Keep logo and basket shopping icon at edges */
@@ -60,8 +63,10 @@
     font-size: 1rem;
 }
 
+/* change transparency to make it invisible */
 .bg-light {
-    background-color: #ffffff !important;
+        background-color: rgba(255, 255, 255, 0) !important;
+
 }
 
 .nav-item {
@@ -73,7 +78,9 @@
 }
 
 .active {
-    color: var(--sugo-color) !important;
+    color: var(--secondary-color) !important;
+    font-size: 4rem !important;
+    font-weight: 800 !important;
 }
 
 .outer-span {
@@ -110,19 +117,33 @@ main {
 /* MANIFESTO */
 
 .manifesto-container {
-    background: white;
-    z-index: 1;
+    /* background: white; */
+    z-index: 101;
+
+    position: relative;
+    height: calc(100vh - 210px);
+    width: 100%;
+    overflow: scroll;
+    transition: overflow 0.3s ease;
+    /* background-image: url("../images/sugo-bg.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .manifesto-column {
     border-radius: 8px;
-    border: var(--sugo-color) 2px solid;
-    height: 85vh;
+    border: var(--secondary-color) 2px solid;
+    height: calc(100vh - 220px);
     overflow: scroll;
+    background-image: url("../images/sugo-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .manifesto-side-panel {
-    background-color: #ffffff !important;
+    /* background-color: #ffffff !important; */
     z-index: 999;
 }
 
@@ -133,6 +154,17 @@ main {
     mix-blend-mode: difference;
     color: #ffffff
 }
+
+.manifesto-right {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.manifesto-left {
+    text-align: left;
+    margin-bottom: 2rem;
+
+}   
 
 /* STORE PAGE */
 
@@ -151,14 +183,13 @@ main {
 
 /* Floating cards container */
 #floating-cards-container,
-.manifesto-container,
 .store-item-container {
     position: relative;
-    height: calc(100vh - 75px);
+    height: calc(100vh - 150px);
     width: 100%;
     overflow: scroll;
     transition: overflow 0.3s ease;
-    background-image: url("../images/sugo.png");
+    /* background-image: url("../images/sugo-bg.png"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -257,13 +288,16 @@ main {
 
 /* visual logo layer (does not affect layout or JS) */
 .sugo-logo-layer {
-    position: absolute;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
     inset: 0;
     background-image: url("../images/sugo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 100;
+    opacity: 0.1;
     pointer-events: none;
     /* opacity: 0.3; */
 }
