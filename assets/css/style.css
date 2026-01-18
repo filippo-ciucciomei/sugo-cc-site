@@ -1,8 +1,8 @@
 /* LAYOUT GUIDES */
-
+/* 
 .row div {
-    /* border: 1px solid black; */
-}
+    border: 1px solid black;
+} */
 
 /* FONTS */
 @font-face {
@@ -30,6 +30,17 @@
 
 /* NAVBAR */
 
+.tomato-spin {
+  width: 200px;
+  transform-style: preserve-3d;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
 .navbar,
 .navbar-light  {
     background-color: rgba(255, 255, 255, 0) !important;
@@ -50,7 +61,7 @@
 }
 
 .navbar-brand img {
-    width: 120px !important;
+    width: 60px !important;
 }
 
 .basket-icon {
@@ -79,7 +90,7 @@
 
 .active {
     color: var(--secondary-color) !important;
-    font-size: 4rem !important;
+    font-size: 2rem !important;
     font-weight: 800 !important;
 }
 
@@ -136,7 +147,7 @@ main {
     border: var(--secondary-color) 2px solid;
     height: calc(100vh - 220px);
     overflow: scroll;
-    background-image: url("../images/sugo-bg.png");
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5e807e312708f708958d8ba7/1593096020350-XGA5IKKR4F32MV63UGNB/Polpette+al+sugo+main.GIF");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -344,4 +355,11 @@ main {
 
   .modal-body {
         background: url("../images/christmas-background.webp") center 7% / cover no-repeat;
+  }
+
+
+  @media (min-width: 768px) {
+    .navbar-brand img {
+    width: 100px !important;
+}
   }
