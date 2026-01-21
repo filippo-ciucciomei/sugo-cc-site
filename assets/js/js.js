@@ -161,6 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
 // switch between two classes and then reset button
 
 // function changeStyle() {

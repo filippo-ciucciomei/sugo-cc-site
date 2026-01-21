@@ -18,99 +18,76 @@
 
   <!-- NAVBAR -->
 
-  <nav class="navbar navbar-light bg-light mt-4">
-    <div class="container-fluid d-flex justify-content-center align-items-center ">
-      <!-- Navbar Brand Image -->
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/tomato2.png" alt="Menu">
-      </a>
-
-      <!-- Centered Navbar Items -->
-      <div class="nav-center">
-        <a class="nav-link nav-item outer-span" href="#">HOME</a>
-        <a class="nav-link nav-item" href="manifesto.html">MANIFESTO</a>
-        <a class="nav-link nav-item outer-span" aria-current="page" href="store.html">STORE</a>
-      </div>
-
-
-
-      <!-- Basket Icon -->
-      <div class="basket-icon">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <span id="basket-count">(0)</span>
-      </div>
-    </div>
-  </nav>
-
 
   <main>
-    
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 index-spacer"></div>
+        <div class="col-12 d-flex justify-content-center in">
+
+          <!-- STORE TOMATO -->
+          <a href="store.html">
+            <div class="d-flex justify-content-center align-items-center index-tomato-card">
+
+              <div class="index-tomato-txt d-flex justify-content-center align-items-center">
+                STORE
+              </div>
+
+              <img class="index-tomato default mx-4" src="assets/images/pomodoro01.png">
+
+              <img class="index-tomato hover mx-4" src="assets/images/sugo-splash.png">
+
+            </div>
+          </a>
+        </div>
+
+
+        <!-- MANIFESTO TOMATO
+        <div class="col-12 d-flex justify-content-center in">
+          <a href="manifesto.html">
+            <div class="d-flex justify-content-center align-items-center index-tomato-card">
+
+              <div class="index-tomato-txt d-flex justify-content-center align-items-center">
+                STORE
+              </div>
+
+              <img class="index-tomato default mx-4" src="assets/images/index-tomato01.png">
+
+              <img class="index-tomato hover mx-4" src="assets/images/sugo-splash.png">
+
+            </div>
+          </a> -->
+
+
+          <!-- <a href="store.html">
+            <div id="tomato-index" class="d-flex justify-content-center align-items-center">
+              <div id="tomato-index-bg" class="index-tomato-bg d-flex justify-content-center align-items-center">
+                STORE
+              </div>
+              <img class="index-tomato mx-4" src="assets/images/index-tomato02.png">
+            </div>
+          </a> -->
+
+          <!-- <a href="#">
+            <div id="" class="d-flex justify-content-center align-items-center">
+              <div id="tomato-index-bg" class="index-tomato-bg d-flex justify-content-center align-items-center">
+                RADIO
+              </div>
+              <img class="index-tomato mx-4" src="assets/images/index-tomato03.png">
+            </div>
+          </a> -->
+
+        </div>
+        <div class="col-12 index-spacer"></div>
+      </div>
+    </div>
+
 
   </main>
 
-  <!-- CONTACTS & SOCIAL -->
-  <div id="contacts-social" class="d-flex text-end">
-    <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener noreferrer"
-      aria-label="Opens Instagram profile in a new tab"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Send an email to info@sugo.cc"><i
-        class="fa-regular fa-envelope"></i></a>
-  </div>
 
 
-<!-- CONTACT MODAL -->
- <!-- Contact Modal -->
-<div class="modal fade" id="contactModal" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="modal-body d-flex justify-content-center">
-        <form id="christmasContactForm">
-          <!-- Name Field -->
-          <div class="mb-3">
-            <label class="form-label" for="name">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name" required />
-          </div>
-          <!-- Email Field -->
-          <div class="mb-3">
-            <label class="form-label" for="email">Your Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
-          </div>
-          <!-- Message Field -->
-          <div class="mb-3">
-            <label class="form-label" for="message">Your Message</label>
-            <textarea class="form-control" id="message" rows="3" placeholder="Write your message" required></textarea>
-          </div>
-          <!-- Submit Button -->
-          <div class="text-end">
-            <button type="submit" class="btn btn-success">
-              Send
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Success Toast -->
-<div class="toast align-items-center text-bg-success border-0 position-fixed p-1" id="successToast" role="alert"
-  aria-live="assertive" aria-atomic="true" style="top: 82px; right: 1%; display: none;">
-  <div class="d-flex">
-    <div class="toast-body text-center">
-      Thank you for sending us a message!
-    </div>
-    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-      aria-label="Close"></button>
-  </div>
-</div>
 
 
 
@@ -124,12 +101,7 @@
 
   <!-- JS -->
   <script src="assets/js/js.js"></script>
-</body>
+
 </body>
 
 </html>
-
-
-
-
-

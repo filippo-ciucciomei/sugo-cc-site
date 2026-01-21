@@ -125,6 +125,57 @@ main {
     color: #000000 !important;
 }
 
+
+/* INDEX PAGE */
+.index-spacer {
+    height: 33vh;
+}
+
+.index-tomato-card {
+   /* position: relative; */
+}
+
+.index-tomato {
+  position: absolute;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+   height: 200px;
+    width: auto;
+    cursor: pointer;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+}
+
+.index-tomato.hover {
+  opacity: 0;
+}
+
+.index-tomato-card .index-tomato.default {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.index-tomato-card:hover .index-tomato.hover {
+  opacity: 0.3;
+  transform: scale(1);
+}
+
+.index-tomato-card:hover .index-tomato.default {
+  opacity: 0;
+}
+
+.index-tomato-txt {
+    position: absolute;
+    font-family: "ABCROM";
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+
+
+
+
+
+
 /* MANIFESTO */
 
 .manifesto-container {
