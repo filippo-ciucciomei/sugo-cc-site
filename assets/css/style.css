@@ -1,6 +1,6 @@
 /* LAYOUT GUIDES */
-/* 
-.row div {
+
+/* .row div {
     border: 1px solid black;
 } */
 
@@ -30,6 +30,11 @@
 
 /* NAVBAR */
 
+nav {
+    height: 140px;
+    background-color: transparent;
+}
+
 .tomato-spin {
   width: 200px;
   transform-style: preserve-3d;
@@ -41,27 +46,47 @@
   to   { transform: rotateY(360deg); }
 }
 
-.navbar,
+/* .navbar,
 .navbar-light  {
     background-color: rgba(255, 255, 255, 0) !important;
     z-index: 1000;
-}
+} */
 
 .nav-center {
     position: relative; /* Ensure normal flow positioning */
     display: flex; /* Ensure nav-item links are laid out horizontally */
     gap: 1rem; /* Add spacing between links */
-    
+}
+
+nav:hover .nav-center {
+    display: none;
+}
+
+.nav-hidden {
+    display: none; 
+}
+
+
+
+nav:hover .nav-hidden {
+    position: relative; /* Ensure normal flow positioning */
+    display: flex; 
+    gap: 3rem; /* Add spacing between links */
+    background-color: rgb(255, 255, 255) !important;
+    padding: 30px 1300px;
+    padding-top: 50px;
+    z-index: 99;
 }
 
 /* Keep logo and basket shopping icon at edges */
-.navbar .navbar-brand {
+.navbar-brand {
     position: absolute; /* Ignore its position in the main flow */
     left: 15px;
+    z-index: 100;
 }
 
 .navbar-brand img {
-    width: 60px !important;
+    width: 100px !important;
 }
 
 .basket-icon {
@@ -75,22 +100,21 @@
 }
 
 /* change transparency to make it invisible */
-.bg-light {
+/* .bg-light {
         background-color: rgba(255, 255, 255, 0) !important;
-
-}
+} */
 
 .nav-item {
     font-family: "ABCROM";
-    font-size: 2rem !important;
+    font-size: 1.2rem !important;
     margin-right: 7px !important;
     margin-left: 7px !important;
     color: var(--secondary-color)
 }
 
 .active {
-    color: var(--secondary-color) !important;
-    font-size: 2rem !important;
+    color: var(--sugo-color) !important;
+    /* font-size: 2rem !important; */
     font-weight: 800 !important;
 }
 
@@ -126,10 +150,101 @@ main {
 }
 
 
-/* INDEX PAGE */
-.index-spacer {
-    height: 33vh;
+/* NEW INDEX PAGE */
+.tomato-container {
+     position: relative;
+     overflow: hidden;
+     min-width: 260px;
+     /* background-color: pink; */
 }
+
+
+
+.image-figure:hover .main-tomato {
+  opacity: 0;
+}
+
+.image-figure:hover .overlay-text,
+.image-figure:hover .overlay-image {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.image-figure {
+  position: relative; 
+  display: inline-block; 
+  line-height: 0; 
+}
+
+.image-figure img {
+  display: block;
+  max-width: 230px;
+  height: auto;
+}
+
+.image-figure .overlay-text{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+    font-family: "ABCROM";
+    font-size: 2.5rem;
+    color: #000000;
+    text-decoration: none !important;
+  pointer-events: none; 
+  padding: 1rem;
+  box-sizing: border-box;
+  z-index: 999;
+  /* these 5 let the text wrap */
+  white-space: normal; 
+  overflow-wrap: break-word; 
+  word-wrap: break-word; 
+  min-width: 0;
+  line-height: 1.2; 
+}
+
+.image-figure .overlay-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+    font-family: "ABCROM";
+    font-size: 2.5rem;
+    color: #000000;
+    text-decoration: none !important;
+  pointer-events: none; 
+  padding: 1rem;
+  box-sizing: border-box;
+  z-index: 0;
+  /* these 5 let the text wrap */
+  white-space: normal; 
+  overflow-wrap: break-word; 
+  word-wrap: break-word; 
+  min-width: 0;
+  line-height: 1.2; 
+}
+
+/* RADIO PAGE */
+
+.radio-box {
+    width: 90vw;
+    max-width: 800px;
+}
+
+
+
+/* OLD INDEX PAGE */
+
 
 .index-tomato-card {
    /* position: relative; */
@@ -155,7 +270,7 @@ main {
 }
 
 .index-tomato-card:hover .index-tomato.hover {
-  opacity: 0.3;
+  opacity: 0.4;
   transform: scale(1);
 }
 
@@ -293,6 +408,27 @@ main {
 /* --- STORE ITEM --- */
 
 /* Store gallery */
+.shop-list {
+    font-family: "ABCROM";
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-list a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.shop-list a:hover {
+    text-decoration: underline;
+    color: var(--sugo-color);
+}
+
+.all-items {
+    font-weight: 800;
+}   
+
 
 .store-gallery,
 .store-features {
@@ -409,8 +545,20 @@ main {
   }
 
 
-  @media (min-width: 768px) {
+  /* to  */
+  @media (max-width: 768px) {
     .navbar-brand img {
-    width: 100px !important;
+    width: 60px !important;
 }
+
+.shop-list {
+    display: none !important;
   }
+}
+
+
+  @media (min-width: 780px) {
+    .tablet-spacer {
+        display: none;
+    }
+}

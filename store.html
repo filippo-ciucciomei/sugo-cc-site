@@ -17,25 +17,32 @@
 
     <!-- NAVBAR -->
 
-  <nav class="navbar navbar-light bg-light mt-4">
-    <div class="container-fluid d-flex justify-content-center align-items-center ">
-      <!-- Navbar Brand Image -->
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/Sugo-Splash.png" alt="Menu">
-      </a>
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-center align-items-center ">
+            <!-- Navbar Brand Image -->
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/Sugo-Splash.png" alt="Menu">
+            </a>
 
-      <!-- Centered Navbar Items -->
-      <div class="nav-center">
-        <a class="nav-link nav-item active" href="store.html">STORE</a>
-      </div>
+            <!-- Centered Navbar Items -->
+            <div class="nav-center">
+                <a class="nav-link nav-item" href="store.html">STORE</a>
+            </div>
 
-      <!-- Basket Icon -->
-      <div class="basket-icon">
+            <div class="nav-center nav-hidden">
+                <a class="nav-link nav-item active" href="store.html">STORE</a>
+                <a class="nav-link nav-item " href="manifesto.html">MANIFESTO</a>
+                <a class="nav-link nav-item " href="radio.html">RADIO</a>
+
+            </div>
+
+            <!-- Basket Icon -->
+            <!-- <div class="basket-icon">
         <i class="fa-solid fa-basket-shopping"></i>
         <span id="basket-count">(0)</span>
-      </div>
-    </div>
-  </nav>
+      </div> -->
+        </div>
+    </nav>
 
     <!-- MAIN CONTENT -->
     <main>
@@ -89,7 +96,7 @@
                         </a>
                     </div>
 
-                     <!-- CARD 5 -->
+                    <!-- CARD 5 -->
                     <div class="card floating-card mt-3 behind-logo" id="card4">
                         <a href="store-item01.html">
                             <img src="assets/images/store/stickers.png" class="card-img-top">
@@ -116,15 +123,17 @@
 
     <!-- STORE CONTROLS -->
     <div id="store-control" class="d-flex flex-column">
-        <div id="stop">STOP</div>
+        <div id="stop"></div>
         <div id="move">MOVE</div>
         <div id="grid">GRID</div>
+        <div> </div>
     </div>
 
 
     <!-- CONTACTS & SOCIAL -->
     <div id="contacts-social" class="d-flex text-end">
-        <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener noreferrer" aria-label="Opens Instagram profile in a new tab"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener noreferrer"
+            aria-label="Opens Instagram profile in a new tab"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" aria-label="Send an email to info@sugo.cc"><i class="fa-regular fa-envelope"></i></a>
     </div>
 

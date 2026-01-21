@@ -16,47 +16,54 @@
 
 <body>
 
-      <!-- NAVBAR -->
+    <!-- NAVBAR -->
 
-  <nav class="navbar navbar-light bg-light mt-4">
-    <div class="container-fluid d-flex justify-content-center align-items-center ">
-      <!-- Navbar Brand Image -->
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/tomato2.png" alt="Menu">
-      </a>
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-center align-items-center ">
+            <!-- Navbar Brand Image -->
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/Sugo-Splash.png" alt="Menu">
+            </a>
 
-      <!-- Centered Navbar Items -->
-      <div class="nav-center">
-        <a class="nav-link nav-item active" href="store.html">STORE</a>
-      </div>
+            <!-- Centered Navbar Items -->
+            <div class="nav-center">
+                <a class="nav-link nav-item" href="store.html">STORE</a>
+            </div>
 
-      <!-- Basket Icon -->
-      <div class="basket-icon">
+            <div class="nav-center nav-hidden">
+                <a class="nav-link nav-item active" href="store.html">STORE</a>
+                <a class="nav-link nav-item " href="manifesto.html">MANIFESTO</a>
+                <a class="nav-link nav-item " href="radio.html">RADIO</a>
+
+            </div>
+
+            <!-- Basket Icon -->
+            <!-- <div class="basket-icon">
         <i class="fa-solid fa-basket-shopping"></i>
         <span id="basket-count">(0)</span>
-      </div>
-    </div>
-  </nav>
+      </div> -->
+        </div>
+    </nav>
 
 
     <main>
-        <div class="container-fluid store-item-container">
-            <div class="row mt-5">
+        <div class="container store-item-container">
+            <div class="row store-item-row mt-5 d-flex justify-content-between" >
 
                 <!-- LEFT PANEL -->
 
-                <div class="col-12 col-md-3 d-flex flex-column align-items-start mt-5">
 
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Size</option>
-                        <option value="1" disabled>XS (soldout)</option>
-                        <option value="2">S</option>
-                        <option value="3">M</option>
-                        <option value="4">L</option>
-                        <option value="5" disabled>XL (soldout)</option>
-                    </select>
-                    <button type="button" class="btn btn-dark mt-3">Buy</button>
+                
 
+                <div class="col-12 col-md-2 d-flex flex-column align-items-start mt-5 shop-list">
+
+                    <span class="all-items mb-3"><a href="store.html">All Items</a></span>
+                    <span><a href="#">Assos x Sugo</a></span>
+                    <span><a href="#">Santini Skinsuit</a></span>
+                    <span><a href="#">T-Shirts</a></span>
+                    <span><a href="#">Socks</a></span>
+                    <span><a href="#">Cap</a></span>
+                    <span><a href="#">Stickers</a></span>
                 </div>
 
                 <!-- MID PANEL -->
@@ -75,7 +82,22 @@
 
                 <!-- RIGHT PANEL -->
                 <div class="col-12 col-md-3 mt-5">
-                    <div class="accordion store-features flex-column overflow-auto" id="accordionPanelsStayOpenExample">
+
+
+
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Size</option>
+                        <option value="1" disabled>XS (soldout)</option>
+                        <option value="2">S</option>
+                        <option value="3">M</option>
+                        <option value="4">L</option>
+                        <option value="5" disabled>XL (soldout)</option>
+                    </select>
+                    <button type="button" class="btn btn-dark mt-3">Buy</button>
+
+
+
+                    <div class="accordion store-features flex-column overflow-auto mt-5" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -87,7 +109,7 @@
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
                                 <div class="accordion-body">
                                     <strong>Faster than punk hardcore.</strong> <br><br>
-                                    <strong>Cooler than scooba diving.</strong> 
+                                    <strong>Cooler than scooba diving.</strong>
                                 </div>
                             </div>
                         </div>
@@ -117,9 +139,10 @@
 
     </main>
 
-      <!-- CONTACTS & SOCIAL -->
+    <!-- CONTACTS & SOCIAL -->
     <div id="contacts-social" class="d-flex text-end">
-        <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener noreferrer" aria-label="Opens Instagram profile in a new tab"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener noreferrer"
+            aria-label="Opens Instagram profile in a new tab"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" aria-label="Send an email to info@sugo.cc"><i class="fa-regular fa-envelope"></i></a>
     </div>
 
