@@ -313,10 +313,12 @@ main {
     border: var(--secondary-color) 2px solid;
     height: calc(100vh - 220px);
     overflow: scroll;
-    background-image: url("https://images.squarespace-cdn.com/content/v1/5e807e312708f708958d8ba7/1593096020350-XGA5IKKR4F32MV63UGNB/Polpette+al+sugo+main.GIF");
+    /* background-image: url("https://images.squarespace-cdn.com/content/v1/5e807e312708f708958d8ba7/1593096020350-XGA5IKKR4F32MV63UGNB/Polpette+al+sugo+main.GIF"); */
+    background-image: url("../images/boiling.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: rgb(42, 33, 34)  !important;
 }
 
 .manifesto-side-panel {
