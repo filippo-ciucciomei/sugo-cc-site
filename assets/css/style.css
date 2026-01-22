@@ -158,6 +158,19 @@ main {
      /* background-color: pink; */
 }
 
+.page-name {
+    margin-top: 50px;
+    font-family: "ABCROM";
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-decoration: none !important;
+    padding: 0px 100px 0 100px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-decoration: none !important;
+    background: #ffffff;
+    z-index: 1001;
+}
 
 
 .image-figure:hover .main-tomato {
@@ -180,7 +193,7 @@ main {
 
 .image-figure img {
   display: block;
-  max-width: 230px;
+  max-width: 180px;
   height: auto;
 }
 
@@ -191,16 +204,11 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-    font-family: "ABCROM";
-    font-size: 2.5rem;
-    color: #000000;
-    text-decoration: none !important;
+  opacity: 1;
+  /* transition: opacity 0.3s ease; */
   pointer-events: none; 
-  padding: 1rem;
   box-sizing: border-box;
-  z-index: 999;
+  z-index: 1001;
   /* these 5 let the text wrap */
   white-space: normal; 
   overflow-wrap: break-word; 
@@ -331,7 +339,7 @@ main {
 .manifesto-container p,
 #store-control div {
     mix-blend-mode: difference;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .manifesto-right {
@@ -556,11 +564,42 @@ main {
 .shop-list {
     display: none !important;
   }
+  
 }
 
 
+ /* INDEX TOMATO IN COLUMN QUERY */
   @media (min-width: 780px) {
     .tablet-spacer {
         display: none;
     }
+
+    .image-figure .overlay-text{
+  opacity: 0;
+  /* transition: opacity 0.3s ease; */
+}
+
+ .page-name {
+    margin-top: 220px;
+    padding: 0px;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    background: transparent;
+    z-index: 1001;
+}
+
+.image-figure img {
+  display: block;
+  max-width: 230px;
+  height: auto;
+}
+
+}
+
+/* LAPTOP SPACERS QUERY */
+    @media (max-width: 935px) {
+    .laptop-spacer {
+        display: none;
+    }
+
 }
