@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/style-new.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+
+</head>
+
+<body class="other-pages-body">
+
+    <!-- NAVBAR -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navDropdown">
+                <img src="assets/images/Sugo-Splash.png" alt="Open menu">
+            </button>
+
+            <div class="nav-dropdown" id="navDropdown">
+                <a href="index-new.html">Home</a>
+                <a href="manifesto-new.html">Manifesto</a>
+                <a href="store-new.html">Store</a>
+                <a href="radio-new.html">Radio</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="store-main">
+        <div class="container-fluid h-100">
+            <div class="row store-layout text-center h-100">
+                <div class="col-md-3 side-panel left-panel text-center">
+
+
+                    <div class="left-panel-list">
+                    <span class="all-items-label">
+                        <a href="store-new.html">ALL ITEMS</a>
+                    </span><br>
+
+
+                    <span class="list-item">
+                        <a href="store-item01-new.html">Assos Kit</a>
+                    </span><br>
+
+                    <span class="list-item">
+                        <a href="store-item01-new.html">Skinsuit</a>
+                    </span><br>
+
+                    <span class="list-item">
+                        <a href="store-item01-new.html">T-shirt</a>
+                    </span><br>
+
+                    <span class="list-item">
+                        <a href="store-item01-new.html">Cap</a>
+                    </span><br>
+
+                    <span class="list-item">
+                        <a href="store-item01-new.html">Stickers</a>
+                    </span><br>
+
+                    <span class="list-item">
+                        <a href="store-item01-new.html">Socks</a>
+                    </span>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-5 photo-panel">
+                    <div class="photo-scroll">
+                        <img src="assets/images/store/asos-kit-1.webp" alt="Item 1">
+                        <img src="assets/images/store/asos-kit-2.webp" alt="Item 2">
+                        <img src="assets/images/store/asos-kit-3.webp" alt="Item 3">
+                    </div>
+                </div>
+
+                <div class="col-md-4 side-panel text-start right-panel">
+                    <div class="photo-scroll">
+
+                        <div class="spacer-store-item"></div>
+
+                        <div class="item-label">
+                        <h1 class="item-name">Assos x Sugo</h1>
+                        <p class="item-description">Cycling Kit</p>
+                        <p class="item-price">£160.00</p>
+                        </div>
+
+                        <!-- SIZE RADIO BUTTONS -->
+                        <div class="size-picker">
+                            <p class="size-title">Size</p>
+
+                            <div class="size-options">
+
+                                <input type="radio" name="size" id="size-xs" value="S">
+                                <label for="size-xs">XS</label>
+
+                                <input type="radio" name="size" id="size-s" value="S">
+                                <label for="size-s">S</label>
+
+                                <input type="radio" name="size" id="size-m" value="M">
+                                <label for="size-m">M</label>
+
+                                <input type="radio" name="size" id="size-l" value="L">
+                                <label for="size-l">L</label>
+
+                                <input type="radio" name="size" id="size-xl" value="XL">
+                                <label for="size-xl">XL</label>
+                            </div>
+                        </div>
+
+                        <div class="key-feature">Key Features</div>
+
+                        <!-- ACCORDION -->
+                        <div class="accordion" id="accordionExample">
+
+                            <!-- ACCORDION 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Product specifications
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        RACING: 2/5<br>
+                                        ENDURANCE: 4/5<br>
+                                        ADVENTURE: 3/5<br>
+                                        SEASON TYPE: 1/3 summer<br>
+                                        TEMPERATURE: &gt; +21°C<br>
+                                        RIDING CONDITIONS: Warm<br>
+                                        FIT: regular<br>
+                                        RIDE INTENSITY: 3/5<br>
+                                        BREATHABILITY: 5/5<br>
+                                        QUICK DRYING: 5/5<br>
+                                        INSULATION: 1/5<br>
+                                        AERO PROPERTIES: 3/5<br>
+                                        PACKABILITY: 5/5
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ACCORDION 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Size & Fit
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The male model is 174cm tall and is wearing a size S.<br><br>
+                                        His measurements are: 77kg in weight, 84cm chest, 78cm waist, and 97cm hips.<br>
+                                        <br>
+                                        If you’re unsure about your size, please consult our Size Guide to find the best
+                                        fit.<br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ACCORDION 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Composition
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Main Fabric 80%PL 20%EA; Sleeve 86%PL 14%EA; Pocket 76%PA 24%EA; Back 100%PL;
+                                        Pocket Ramp 94%PA 6%EA; Back Insert 100%PL
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END ACCORDION -->
+
+
+                        <div class="cart-button">
+                            <a href="#">ADD TO CART</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- CONTACTS AND SOCIAL MEDIA -->
+    <div class="contacts-social" aria-label="Store motion controls">
+
+
+
+        <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram icon"></i>
+        </a>
+
+        <a href="https://www.strava.com/clubs/1081522" target="_blank" rel="noopener" aria-label="Strava">
+            <i class="fa-brands fa-strava icon"></i>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" aria-label="Email">
+            <i class="fa-regular fa-envelope icon"></i>
+        </a>
+
+    </div>
+
+
+
+    <!-- Background layer -->
+    <div class="sugo-logo-layer"> </div>
+
+
+    <!-- NAVBAR SCRIPT -->
+    <script>
+        const navLeft = document.querySelector('.nav-left');
+        const navToggle = document.getElementById('navToggle');
+
+        navToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            navLeft.classList.toggle('open');
+
+            const expanded = navLeft.classList.contains('open');
+            navToggle.setAttribute('aria-expanded', expanded);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!navLeft.contains(e.target)) {
+                navLeft.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/9e128b115a.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <!-- <script src="assets/js/js.js"></script> -->
+
+
+</body>

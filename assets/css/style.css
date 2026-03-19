@@ -1,8 +1,8 @@
 /* LAYOUT GUIDES */
 
-/* .row div {
-    border: 1px solid black;
-} */
+.row div {
+    border: 1px solid pink;
+}
 
 /* FONTS */
 @font-face {
@@ -30,67 +30,34 @@
 
 /* NAVBAR */
 
-nav {
-    height: 140px;
-    background-color: transparent;
-}
 
-.tomato-spin {
-  width: 200px;
-  transform-style: preserve-3d;
-  animation: spin 6s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
-}
-
-/* .navbar,
-.navbar-light  {
-    background-color: rgba(255, 255, 255, 0) !important;
-    z-index: 1000;
-} */
 
 .nav-center {
-    position: relative; /* Ensure normal flow positioning */
-    display: flex; /* Ensure nav-item links are laid out horizontally */
-    gap: 1rem; /* Add spacing between links */
+    position: relative;
+    /* Ensure normal flow positioning */
+    display: flex;
+    /* Ensure nav-item links are laid out horizontally */
+    gap: 1rem;
+    /* Add spacing between links */
 }
 
-nav:hover .nav-center {
-    display: none;
-}
-
-.nav-hidden {
-    display: none; 
-}
-
-
-
-nav:hover .nav-hidden {
-    position: relative; /* Ensure normal flow positioning */
-    display: flex; 
-    gap: 3rem; /* Add spacing between links */
-    background-color: rgb(255, 255, 255) !important;
-    padding: 30px 1300px;
-    padding-top: 50px;
-    z-index: 99;
-}
 
 /* Keep logo and basket shopping icon at edges */
 .navbar-brand {
-    position: absolute; /* Ignore its position in the main flow */
-    left: 15px;
+    position: absolute;
+    /* Ignore its position in the main flow */
+    left: 25px;
     z-index: 100;
 }
 
 .navbar-brand img {
-    width: 100px !important;
+    width: 70px !important;
+    margin-top: 110px !important;
 }
 
 .basket-icon {
-    position: absolute; /* Ensure normal flow positioning */
+    position: absolute;
+    /* Ensure normal flow positioning */
     right: 15px;
     font-size: 2rem;
 }
@@ -139,107 +106,125 @@ main {
     right: 15px;
     bottom: 20px;
     font-size: 1.5rem;
-    cursor: pointer;    
+    cursor: pointer;
     z-index: 1000;
-
 }
+
 
 #contacts-social i {
     text-decoration: none !important;
     color: #000000 !important;
 }
 
+#contacts-social-manifesto {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+#contacts-social-manifesto i {
+    text-decoration: none !important;
+    color: #ffffff !important;
+    font-weight: 50 !important;
+}
+
+
+
 
 /* NEW INDEX PAGE */
 .tomato-container {
-     position: relative;
-     overflow: hidden;
-     min-width: 260px;
-     /* background-color: pink; */
+    position: relative;
+    overflow: hidden;
+    min-width: 260px;
+    z-index: 100;
+    /* background-color: pink; */
 }
 
 .page-name {
-    margin-top: 50px;
-    font-family: "ABCROM";
-    font-size: 2rem;
+    /* margin-top: 50px; */
+    font-family: "ABCROM" !important;
+    font-size: 2rem !important ;
     color: var(--secondary-color);
     text-decoration: none !important;
-    padding: 0px 100px 0 100px;
-    font-size: 2rem;
-    color: var(--secondary-color);
-    text-decoration: none !important;
+    /* padding: 0px 100px 0 100px; */
     background: #ffffff;
     z-index: 1001;
 }
 
 
+
+
 .image-figure:hover .main-tomato {
-  opacity: 0;
+    opacity: 0;
 }
 
 .image-figure:hover .overlay-text,
 .image-figure:hover .overlay-image {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 
 
 .image-figure {
-  position: relative; 
-  display: inline-block; 
-  line-height: 0; 
+    position: relative;
+    display: inline-block;
+    line-height: 0;
 }
 
 .image-figure img {
-  display: block;
-  max-width: 180px;
-  height: auto;
+    display: block;
+    max-width: 180px;
+    height: auto;
 }
 
-.image-figure .overlay-text{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  opacity: 1;
-  /* transition: opacity 0.3s ease; */
-  pointer-events: none; 
-  box-sizing: border-box;
-  z-index: 1001;
-  /* these 5 let the text wrap */
-  white-space: normal; 
-  overflow-wrap: break-word; 
-  word-wrap: break-word; 
-  min-width: 0;
-  line-height: 1.2; 
+.image-figure .overlay-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+    /* transition: opacity 0.3s ease; */
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 1001;
+    /* these 5 let the text wrap */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    min-width: 0;
+    line-height: 1.2;
 }
 
 .image-figure .overlay-image {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     font-family: "ABCROM";
     font-size: 2.5rem;
     color: #000000;
     text-decoration: none !important;
-  pointer-events: none; 
-  padding: 1rem;
-  box-sizing: border-box;
-  z-index: 0;
-  /* these 5 let the text wrap */
-  white-space: normal; 
-  overflow-wrap: break-word; 
-  word-wrap: break-word; 
-  min-width: 0;
-  line-height: 1.2; 
+    pointer-events: none;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 0;
+    /* these 5 let the text wrap */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    min-width: 0;
+    line-height: 1.2;
 }
 
 /* RADIO PAGE */
@@ -255,13 +240,13 @@ main {
 
 
 .index-tomato-card {
-   /* position: relative; */
+    /* position: relative; */
 }
 
 .index-tomato {
-  position: absolute;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-   height: 200px;
+    position: absolute;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    height: 200px;
     width: auto;
     cursor: pointer;
     margin-left: 50px !important;
@@ -269,21 +254,21 @@ main {
 }
 
 .index-tomato.hover {
-  opacity: 0;
+    opacity: 0;
 }
 
 .index-tomato-card .index-tomato.default {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
 .index-tomato-card:hover .index-tomato.hover {
-  opacity: 0.4;
-  transform: scale(1);
+    opacity: 0.4;
+    transform: scale(1);
 }
 
 .index-tomato-card:hover .index-tomato.default {
-  opacity: 0;
+    opacity: 0;
 }
 
 .index-tomato-txt {
@@ -295,22 +280,70 @@ main {
 
 
 
-
-
-
-
 /* MANIFESTO */
+
+.sugo-logo-layer-manifesto {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    inset: 0;
+    background-image: url("../images/sugo-boiling.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    /* opacity: 0.3; */
+}
+
+.sugo-logo-layer-manifesto-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    inset: 0;
+    background-image: url("../images/black-panel.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.manifesto-title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 0px;
+    font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 6.5rem;
+    color: var(--secondary-color);
+    background: transparent;
+    z-index: 1001;
+    opacity: 0.8;
+}
+
+.manifesto-text {
+font-family: "Roboto Mono", monospace;
+  font-weight: 350 !important;
+  line-height: 1.4;
+  /* color: white; */
+  /* text-align: left; */
+  text-shadow:
+    -1px -1px 3px rgba(107, 10, 10, 0.5),
+    -1px -1px 3px rgba(107, 10, 10, 0.5),
+    -1px -1px 3px rgba(107, 10, 10, 0.5);
+}
+
+
 
 .manifesto-container {
     /* background: white; */
     z-index: 101;
-
     position: relative;
-    height: calc(100vh - 210px);
+    height: calc(100vh - 130px);
     width: 100%;
     overflow: scroll;
     transition: overflow 0.3s ease;
-    /* background-image: url("../images/sugo-bg.png"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -318,15 +351,15 @@ main {
 
 .manifesto-column {
     border-radius: 8px;
-    border: var(--secondary-color) 2px solid;
-    height: calc(100vh - 220px);
+    /* border: var(--secondary-color) 2px solid; */
+    height: calc(100vh - 130px);
     overflow: scroll;
     /* background-image: url("https://images.squarespace-cdn.com/content/v1/5e807e312708f708958d8ba7/1593096020350-XGA5IKKR4F32MV63UGNB/Polpette+al+sugo+main.GIF"); */
-    background-image: url("../images/boiling.gif");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgb(42, 33, 34)  !important;
+    /* background-image: url("../images/sugo-boiling.gif"); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-color: rgb(42, 33, 34)  !important; */
 }
 
 .manifesto-side-panel {
@@ -334,15 +367,14 @@ main {
     z-index: 999;
 }
 
-.manifesto-container h1,
-.manifesto-container h4,
-.manifesto-container p,
+.manifesto-title,
+.manifesto-text,
 #store-control div {
     mix-blend-mode: difference;
     color: #ffffff;
 }
 
-.manifesto-right {
+/* .manifesto-right {
     text-align: right;
     margin-bottom: 2rem;
 }
@@ -351,7 +383,7 @@ main {
     text-align: left;
     margin-bottom: 2rem;
 
-}   
+} */
 
 /* STORE PAGE */
 
@@ -369,10 +401,10 @@ main {
 
 
 /* Floating cards container */
-#floating-cards-container,
-.store-item-container {
+#floating-cards-container, {
+    margin-top: 150px;
     position: relative;
-    height: calc(100vh - 150px);
+    height: 100vh;
     width: 100%;
     overflow: scroll;
     transition: overflow 0.3s ease;
@@ -381,6 +413,20 @@ main {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.store-item-container {
+    margin-top: 150px;
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    overflow: scroll;
+    transition: overflow 0.3s ease;
+    /* background-image: url("../images/sugo-bg.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 /* When the container is in grid mode */
 .grid-layout #floating-cards-container {
@@ -423,6 +469,7 @@ main {
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
+    height: 70vh;
 }
 
 .shop-list a {
@@ -437,13 +484,15 @@ main {
 
 .all-items {
     font-weight: 800;
-}   
+}
 
 
 .store-gallery,
 .store-features {
-    height: 80vh;
+    height: 70vh;
 }
+
+
 
 /* store accordion */
 
@@ -485,6 +534,8 @@ main {
     box-shadow: none;
 }
 
+
+
 /* ===================================================== */
 /* === ADDITIONS FOR LOGO LAYER + BLEND FIX (SAFE) ===== */
 /* ===================================================== */
@@ -504,11 +555,12 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 100;
-    opacity: 0.1;
+    /* z-index: 100; */
+    /* opacity: 0.1; */
     pointer-events: none;
     /* opacity: 0.3; */
 }
+
 
 /* cards behind / ahead of logo */
 .behind-logo {
@@ -533,71 +585,81 @@ main {
 
 
 /* ------------------- Contact Modal & Toast------------------- */
- #toastMessage {
+#toastMessage {
     z-index: 11;
-  }
+}
 
-  .modal-header {
+.modal-header {
     background-color: #004d00;
-  }
+}
 
-  .modal-title {
+.modal-title {
     color: #ffffff;
     font-weight: 600;
-  }       
+}
 
-  .form-control {
+.form-control {
     width: 250px !important;
-  }
-
-  .modal-body {
-        background: url("../images/christmas-background.webp") center 7% / cover no-repeat;
-  }
+}
 
 
-  /* to  */
-  @media (max-width: 768px) {
+/* STORE ITEM RESIZE QUERY  */
+@media (max-width: 768px) {
     .navbar-brand img {
-    width: 60px !important;
+        width: 60px !important;
+        height: auto;
+    }
+
+    .shop-list {
+        display: none !important;
+    }
+
+    .store-gallery,
+    .store-features {
+        height: 60vh;
+    }
+
+    .store-item-row {
+        margin-top: 0px !important;
+    }
+
+    .store-gallery img {
+        /* width: 70vw !important; */
+    }
+
 }
 
-.shop-list {
-    display: none !important;
-  }
-  
-}
 
-
- /* INDEX TOMATO IN COLUMN QUERY */
-  @media (min-width: 780px) {
+/* INDEX TOMATO IN COLUMN QUERY */
+@media (min-width: 780px) {
     .tablet-spacer {
         display: none;
     }
 
-    .image-figure .overlay-text{
-  opacity: 0;
-  /* transition: opacity 0.3s ease; */
-}
+    .image-figure .overlay-text {
+        opacity: 0;
+        /* transition: opacity 0.3s ease; */
+    }
 
- .page-name {
-    margin-top: 220px;
-    padding: 0px;
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    background: transparent;
-    z-index: 1001;
-}
+    .page-name {
+        margin-top: 210px;
+        padding: 0px;
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        background: transparent;
+        z-index: 1001;
+    }
 
-.image-figure img {
-  display: block;
-  max-width: 230px;
-  height: auto;
-}
+    .image-figure img {
+        display: block;
+        max-width: 230px;
+        height: auto;
+    }
 
 }
 
 /* LAPTOP SPACERS QUERY */
-    @media (max-width: 935px) {
+@media (max-width: 935px) {
     .laptop-spacer {
         display: none;
     }
