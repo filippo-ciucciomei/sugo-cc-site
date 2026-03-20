@@ -65,7 +65,6 @@
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
-    z-index: -1;
 }
 
 .sugo-logo-layer-manifesto-black {
@@ -79,7 +78,6 @@
     background-repeat: no-repeat;
     pointer-events: none;
     opacity: 0.4;
-    z-index: -1;
 }
 
 .index-body {
@@ -129,12 +127,18 @@
 }
 
 .overlay-text {
+    /* font-family: "Roboto Mono", monospace; */
     font-family: "Lato", sans-serif;
     z-index: 3;
     top: 50%;
     width: 207px;
     height: auto;
     color: rgb(0, 0, 0);
+    /* text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white; */
     font-size: 2.3rem;
     font-weight: bold;
     text-align: center;
@@ -161,8 +165,7 @@
 .other-pages-body {
     margin: 0;
     padding-top: 110px;
-    min-height: 100vh;
-    box-sizing: border-box;
+    /* prevents page content hiding behind fixed nav */
 }
 
 .top-nav {
@@ -170,7 +173,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3000;
+    z-index: 1000;
     padding: 18px 24px;
     box-sizing: border-box;
     pointer-events: none;
@@ -183,8 +186,6 @@
 }
 
 .nav-toggle {
-    position: relative;
-    z-index: 3002;
     background: none;
     border: none;
     padding: 0;
@@ -193,10 +194,10 @@
     display: block;
 }
 
-.nav-toggle img,
-#nav-tomato-toggle {
+.nav-toggle img {
     display: block;
     width: 78px;
+    /* adjust as needed */
     height: auto;
 }
 
@@ -214,9 +215,8 @@
         0 8px 20px rgba(0, 0, 0, 0.08);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-4px);
     transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
-    z-index: 3001;
+    z-index: -1;
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
 }
@@ -231,6 +231,7 @@
     transform: rotate(-2.45deg);
     pointer-events: none;
 }
+
 
 .nav-dropdown a {
     position: relative;
@@ -255,12 +256,11 @@
     transform: translateY(0);
 }
 
-
 /* MANIFESTO */
 
 .manifesto-box {
     position: relative;
-    z-index: 1;
+    z-index: 100;
 }
 
 .manifesto-title {
@@ -271,15 +271,15 @@
     font-weight: 400;
     font-style: normal;
     font-size: 6.5rem;
+    /* color: var(--secondary-color); */
     color: white;
     background: transparent;
-    z-index: 1;
+    z-index: 1001;
     opacity: 0.9;
-    position: relative;
 }
 
 .manifesto-text {
-    font-family: "Roboto Mono", monospace;
+    font-family: "roboto mono", monospace;
     color: white;
     font-weight: 100 !important;
     text-align: justify;
@@ -288,9 +288,8 @@
         1px -1px 0 rgba(165, 0, 0, 0.6),
         -1px 1px 0 rgba(165, 0, 0, 0.6),
         1px 1px 0 rgba(165, 0, 0, 0.6);
-    z-index: 1;
+    z-index: 100;
     margin-bottom: 80px !important;
-    position: relative;
 }
 
 /* MEDIA QUERIES MANIFESTO */
@@ -333,7 +332,7 @@
     position: fixed;
     top: 26px;
     right: 24px;
-    z-index: 2;
+    z-index: 1100;
     display: flex;
     gap: 10px;
 }
@@ -379,16 +378,21 @@
     border-radius: 7px 11px 8px 10px / 9px 7px 11px 8px;
 }
 
+
 .card:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* background-color: rgb(238, 238, 238); */
 }
+
 
 .card-body {
     padding: 0 !important;
 }
 
 .card-text {
+    /* border: 1px solid rgba(139, 138, 138, 0.1); */
     border-top: 1.5px solid #bbb9b9;
+    /* border-radius: 7px 11px 8px 10px / 9px 7px 11px 8px; */
     padding: 5px;
     font-family: "Roboto Mono", monospace;
 }
@@ -401,8 +405,6 @@
 /* moving mode */
 .floating-card {
     will-change: transform, left, top;
-    position: relative;
-    z-index: 1;
 }
 
 .cards-are-moving .floating-card {
@@ -429,6 +431,7 @@
 /* LEFT PANEL  */
 
 .left-panel-list {
+
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -447,6 +450,7 @@
         line-height: 1rem !important;
     }
 }
+
 
 .left-panel-list a,
 .right-panel a {
@@ -511,6 +515,7 @@
     margin: 0 !important;
 }
 
+
 .store-main {
     height: calc(100vh - 110px);
 }
@@ -555,6 +560,7 @@
     display: block;
     width: 100%;
     height: auto;
+    /* margin-bottom: 1rem; */
 }
 
 /* PHOTO SCROLL MEDIA QUERY */
@@ -562,7 +568,7 @@
 @media (max-width: 768px) {
     .store-main {
         height: auto;
-        min-height: auto;
+        min-height: calc(100vh - 110px);
     }
 
     .store-layout {
@@ -576,6 +582,7 @@
     .product-gallery-scroll {
         display: flex;
         flex-direction: row;
+        /* gap: 1rem; */
         overflow-x: auto;
         overflow-y: hidden;
         height: auto;
@@ -659,6 +666,7 @@
 
 /* STORE ITEM ACCORDION */
 
+/* the visible part of the accordion collapsed */
 /* HEADER */
 .accordion-button {
     font-family: "Roboto Mono", monospace;
@@ -682,6 +690,8 @@
     padding: 0.2rem 0 0.35rem 0 !important;
     margin-top: 0 !important;
     line-height: 1.4;
+
+
 }
 
 .accordion,
@@ -691,12 +701,14 @@
     background: transparent !important;
     border: none !important;
     font-family: "Roboto Mono", monospace;
+
 }
 
 .accordion-item {
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 0 !important;
 }
+
 
 /* remove Bootstrap default arrow */
 .accordion-button::after {
@@ -737,7 +749,7 @@
     position: fixed;
     bottom: 26px;
     left: 24px;
-    z-index: 2;
+    z-index: 1100;
     display: flex;
     gap: 5px;
 }
@@ -747,13 +759,16 @@
     color: #222;
     background-color: #f2f2f2;
     padding: 3px;
+    /* border: 0.2px solid black; */
     border-radius: 5px;
 }
 
 .contacts-social .icon-manifesto {
     font-size: 1.5rem;
     color: #eeeeee;
+    /* background-color: #fa3f3f; */
     padding: 3px;
+    /* border: 0.2px solid black; */
     border-radius: 5px;
 }
 
@@ -762,7 +777,7 @@
 
 iframe {
     position: relative;
-    z-index: 1;
+    z-index: 20;
 }
 
 #floating-rider {
@@ -771,96 +786,14 @@ iframe {
     left: 40px;
     width: 120px;
     height: auto;
-    z-index: 1;
+    z-index: 10;
     pointer-events: none;
     user-select: none;
     will-change: transform, left, top;
     transform-origin: center center;
 }
 
+/* #floating-rider {
+    transform-origin: center center;
+} */
 
-/* ---------------------------------
-   MOBILE / TABLET FLOW FIX
----------------------------------- */
-
-@media (max-width: 768px) {
-
-    html,
-    body {
-        min-height: 100svh;
-    }
-
-    body.other-pages-body {
-        padding-top: 0;
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    body.other-pages-body main {
-        flex: 1 0 auto;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-    }
-
-    .top-nav {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        padding: 18px 24px 10px 24px;
-        flex: 0 0 auto;
-        z-index: 3000;
-    }
-
-    .nav-left {
-        position: relative;
-        display: inline-block;
-    }
-
-    .nav-toggle {
-        position: relative;
-        z-index: 3002;
-    }
-
-    .nav-dropdown {
-        position: absolute;
-        top: calc(100% - 21px);
-        left: -15px;
-        z-index: 3001;
-    }
-
-    .contacts-social {
-        position: static;
-        margin-top: auto;
-        padding: 20px 24px 26px 24px;
-        display: flex;
-        gap: 5px;
-        align-self: flex-start;
-        z-index: 1;
-    }
-
-    .store-controls {
-        position: absolute;
-        top: 22px;
-        right: 24px;
-        z-index: 2;
-    }
-
-    #floating-rider {
-        z-index: 1;
-    }
-
-    iframe,
-    .manifesto-box,
-    .floating-card,
-    .card,
-    .store-main,
-    .store-layout,
-    .photo-panel,
-    .right-panel {
-        position: relative;
-        z-index: 1;
-    }
-}
