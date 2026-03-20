@@ -1,286 +1,35 @@
-/* LAYOUT GUIDES */
-
-.row div {
-    border: 1px solid pink;
+/* layout */
+/* .row {
+    border: 2px solid rgb(245, 86, 112);
 }
 
-/* FONTS */
-@font-face {
-    font-family: "ABCP3rman3nt";
-    src: url("../fonts/ABCP3rman3nt-Book.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
+.col-12,
+.col-md-2 {
+    border: 2px solid blue;
+    min-width: 235px !important;
+    } */
 
-@font-face {
-    font-family: "ABCROM";
-    src: url("../fonts/ABCROM-Book.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* PALETTE */
-
-:root {
-    --main-bg-color: #ffffff;
-    --main-text-color: #000000;
-    --sugo-color: #FD0021;
-    --secondary-color: #902A2A;
-}
-
-/* NAVBAR */
-
-
-
-.nav-center {
-    position: relative;
-    /* Ensure normal flow positioning */
-    display: flex;
-    /* Ensure nav-item links are laid out horizontally */
-    gap: 1rem;
-    /* Add spacing between links */
-}
-
-
-/* Keep logo and basket shopping icon at edges */
-.navbar-brand {
-    position: absolute;
-    /* Ignore its position in the main flow */
-    left: 25px;
-    z-index: 100;
-}
-
-.navbar-brand img {
-    width: 70px !important;
-    margin-top: 110px !important;
-}
-
-.basket-icon {
-    position: absolute;
-    /* Ensure normal flow positioning */
-    right: 15px;
-    font-size: 2rem;
-}
-
-#basket-count {
-    font-size: 1rem;
-}
-
-/* change transparency to make it invisible */
-/* .bg-light {
-        background-color: rgba(255, 255, 255, 0) !important;
+/* div {
+    border: 0.4px solid green;
 } */
 
-.nav-item {
-    font-family: "ABCROM";
-    font-size: 1.2rem !important;
-    margin-right: 7px !important;
-    margin-left: 7px !important;
-    color: var(--secondary-color)
-}
 
-.active {
-    color: var(--sugo-color) !important;
-    /* font-size: 2rem !important; */
-    font-weight: 800 !important;
-}
+/* background */
 
-.outer-span {
-    position: relative !important;
-    top: 10px !important;
-}
+/* The background layer remains full screen and doesn't scroll */
 
-.navbar img {
-    width: 160px;
-    height: auto;
-}
-
-/* GENERAL STYLE */
-
-main {
-    margin-top: 10px;
-}
-
-#contacts-social {
-    position: absolute;
-    right: 15px;
-    bottom: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-
-#contacts-social i {
-    text-decoration: none !important;
-    color: #000000 !important;
-}
-
-#contacts-social-manifesto {
-    position: absolute;
-    right: 15px;
-    bottom: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-
-#contacts-social-manifesto i {
-    text-decoration: none !important;
-    color: #ffffff !important;
-    font-weight: 50 !important;
-}
-
-
-
-
-/* NEW INDEX PAGE */
-.tomato-container {
-    position: relative;
-    overflow: hidden;
-    min-width: 260px;
-    z-index: 100;
-    /* background-color: pink; */
-}
-
-.page-name {
-    /* margin-top: 50px; */
-    font-family: "ABCROM" !important;
-    font-size: 2rem !important ;
-    color: var(--secondary-color);
-    text-decoration: none !important;
-    /* padding: 0px 100px 0 100px; */
-    background: #ffffff;
-    z-index: 1001;
-}
-
-
-
-
-.image-figure:hover .main-tomato {
-    opacity: 0;
-}
-
-.image-figure:hover .overlay-text,
-.image-figure:hover .overlay-image {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-
-
-.image-figure {
-    position: relative;
-    display: inline-block;
-    line-height: 0;
-}
-
-.image-figure img {
-    display: block;
-    max-width: 180px;
-    height: auto;
-}
-
-.image-figure .overlay-text {
-    position: absolute;
+.sugo-logo-layer {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    opacity: 1;
-    /* transition: opacity 0.3s ease; */
+    background-image: url("../images/sugo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     pointer-events: none;
-    box-sizing: border-box;
-    z-index: 1001;
-    /* these 5 let the text wrap */
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    min-width: 0;
-    line-height: 1.2;
+    z-index: -1;
 }
-
-.image-figure .overlay-image {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-family: "ABCROM";
-    font-size: 2.5rem;
-    color: #000000;
-    text-decoration: none !important;
-    pointer-events: none;
-    padding: 1rem;
-    box-sizing: border-box;
-    z-index: 0;
-    /* these 5 let the text wrap */
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    min-width: 0;
-    line-height: 1.2;
-}
-
-/* RADIO PAGE */
-
-.radio-box {
-    width: 90vw;
-    max-width: 800px;
-}
-
-
-
-/* OLD INDEX PAGE */
-
-
-.index-tomato-card {
-    /* position: relative; */
-}
-
-.index-tomato {
-    position: absolute;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    height: 200px;
-    width: auto;
-    cursor: pointer;
-    margin-left: 50px !important;
-    margin-right: 50px !important;
-}
-
-.index-tomato.hover {
-    opacity: 0;
-}
-
-.index-tomato-card .index-tomato.default {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.index-tomato-card:hover .index-tomato.hover {
-    opacity: 0.4;
-    transform: scale(1);
-}
-
-.index-tomato-card:hover .index-tomato.default {
-    opacity: 0;
-}
-
-.index-tomato-txt {
-    position: absolute;
-    font-family: "ABCROM";
-    font-size: 2.5rem;
-    color: #000000;
-}
-
-
-
-/* MANIFESTO */
 
 .sugo-logo-layer-manifesto {
     position: fixed;
@@ -292,10 +41,9 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
-    /* opacity: 0.3; */
 }
 
-.sugo-logo-layer-manifesto-overlay {
+.sugo-logo-layer-manifesto-black {
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -305,144 +53,323 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.4;
+}
+
+.index-body {
+    background-image: url("../images/sugo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* INDEX-PAGE */
+
+.index-body .col-md-2 {
+    min-width: 235px !important;
+}
+
+.index-image-card {
+    position: relative;
+    height: 200px;
+    width: 230px;
+    overflow: hidden;
+}
+
+.index-image-card img,
+.index-image-card .overlay-text {
+    position: absolute;
+}
+
+.index-image-card img {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.img-default {
+    opacity: 1;
+    z-index: 1;
+}
+
+.img-hover {
+    opacity: 0;
+    z-index: 2;
+}
+
+.overlay-text {
+    /* font-family: "Roboto Mono", monospace; */
+    font-family: "Lato", sans-serif;
+    z-index: 3;
+    top: 50%;
+    width: 207px;
+    height: auto;
+    color: rgb(0, 0, 0);
+    /* text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white; */
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.index-image-card:hover .img-default {
+    opacity: 0;
+}
+
+.index-image-card:hover .img-hover {
+    opacity: 0.6;
+}
+
+.index-image-card:hover .overlay-text {
+    opacity: 1;
+}
+
+
+/* NAVBAR */
+
+.other-pages-body {
+    margin: 0;
+    padding-top: 110px;
+    /* prevents page content hiding behind fixed nav */
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.nav-left {
+    position: relative;
+    display: inline-block;
+    pointer-events: auto;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-toggle img {
+    display: block;
+    width: 78px;
+    /* adjust as needed */
+    height: auto;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% - 21px);
+    left: -15px;
+    min-width: 178px;
+    background: rgba(244, 244, 242, 1);
+    border-radius: 7px 11px 8px 10px / 9px 7px 11px 8px;
+    border: 1.5px solid rgba(139, 138, 138, 0.5);
+    padding: 14px 0;
+    box-shadow:
+        inset 0 -2px 6px rgba(0, 0, 0, 0.04),
+        0 8px 20px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+    z-index: -1;
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+/* irregular outer line */
+.nav-dropdown::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 2px solid #111;
+    border-radius: 7px 11px 8px 10px / 9px 7px 11px 8px;
+    transform: rotate(-2.45deg);
+    pointer-events: none;
+}
+
+
+.nav-dropdown a {
+    position: relative;
+    display: block;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400 !important;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #111;
+    font-size: 1rem;
+    line-height: 1.2;
+    z-index: 1;
+}
+
+.nav-dropdown a:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.nav-left.open .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* MANIFESTO */
+
+.manifesto-box {
+    position: relative;
+    z-index: 100;
 }
 
 .manifesto-title {
-    margin-top: 50px;
+    margin-top: 0px !important;
     margin-bottom: 30px;
     padding: 0px;
     font-family: "Titillium Web", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     font-size: 6.5rem;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
+    color: white;
     background: transparent;
     z-index: 1001;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .manifesto-text {
-font-family: "Roboto Mono", monospace;
-  font-weight: 350 !important;
-  line-height: 1.4;
-  /* color: white; */
-  /* text-align: left; */
-  text-shadow:
-    -1px -1px 3px rgba(107, 10, 10, 0.5),
-    -1px -1px 3px rgba(107, 10, 10, 0.5),
-    -1px -1px 3px rgba(107, 10, 10, 0.5);
+    font-family: "roboto mono", monospace;
+    color: white;
+    font-weight: 100 !important;
+    text-align: justify;
+    text-shadow:
+        -1px -1px 0 rgba(165, 0, 0, 0.6),
+        1px -1px 0 rgba(165, 0, 0, 0.6),
+        -1px 1px 0 rgba(165, 0, 0, 0.6),
+        1px 1px 0 rgba(165, 0, 0, 0.6);
+    z-index: 100;
+    margin-bottom: 80px !important;
 }
 
+/* MEDIA QUERIES MANIFESTO */
 
+@media (max-width: 768px) {
 
-.manifesto-container {
-    /* background: white; */
-    z-index: 101;
-    position: relative;
-    height: calc(100vh - 130px);
-    width: 100%;
-    overflow: scroll;
-    transition: overflow 0.3s ease;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    .manifesto-title {
+        font-size: 3.5rem;
+    }
+
+    .manifesto-text {
+        font-size: 0.8rem;
+        text-shadow:
+            -1px -1px 0 rgba(165, 0, 0, 0.6),
+            1px -1px 0 rgba(165, 0, 0, 0.6),
+            -1px 1px 0 rgba(165, 0, 0, 0.6),
+            1px 1px 0 rgba(165, 0, 0, 0.6);
+        text-align: justify;
+    }
+
 }
 
-.manifesto-column {
-    border-radius: 8px;
-    /* border: var(--secondary-color) 2px solid; */
-    height: calc(100vh - 130px);
-    overflow: scroll;
-    /* background-image: url("https://images.squarespace-cdn.com/content/v1/5e807e312708f708958d8ba7/1593096020350-XGA5IKKR4F32MV63UGNB/Polpette+al+sugo+main.GIF"); */
-    /* background-image: url("../images/sugo-boiling.gif"); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* background-color: rgb(42, 33, 34)  !important; */
+@media (max-width: 480px) {
+
+    .manifesto-title {
+        font-size: 2.5rem;
+    }
+
+    .manifesto-text {
+        font-size: 0.7rem;
+    }
+
 }
 
-.manifesto-side-panel {
-    /* background-color: #ffffff !important; */
-    z-index: 999;
-}
-
-.manifesto-title,
-.manifesto-text,
-#store-control div {
-    mix-blend-mode: difference;
-    color: #ffffff;
-}
-
-/* .manifesto-right {
-    text-align: right;
-    margin-bottom: 2rem;
-}
-
-.manifesto-left {
-    text-align: left;
-    margin-bottom: 2rem;
-
-} */
 
 /* STORE PAGE */
 
-#store-control {
-    position: absolute;
-    right: 40px;
-    top: 47vh;
-    font-weight: 600;
+/* controls */
+.store-controls {
+    position: fixed;
+    top: 26px;
+    right: 24px;
+    z-index: 1100;
+    display: flex;
+    gap: 10px;
+}
+
+.motion-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.motion-btn:active {
+    transform: scale(0.98);
+}
+
+.motion-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    gap: 1.5rem;
-    border: #000000 1px solid;
-    padding: 5px 10px;
-    border-radius: 2px;
 }
 
-
-/* Floating cards container */
-#floating-cards-container, {
-    margin-top: 150px;
-    position: relative;
-    height: 100vh;
+.motion-btn img {
+    display: block;
     width: 100%;
-    overflow: scroll;
-    transition: overflow 0.3s ease;
-    /* background-image: url("../images/sugo-bg.png"); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.store-item-container {
-    margin-top: 150px;
-    position: relative;
-    height: 70vh;
-    width: 100%;
-    overflow: scroll;
-    transition: overflow 0.3s ease;
-    /* background-image: url("../images/sugo-bg.png"); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
-/* When the container is in grid mode */
-.grid-layout #floating-cards-container {
-    overflow: scroll;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* floating cards */
+.cards-column {
+    margin-bottom: 80px !important;
+}
 
 .card {
-    border: none !important;
-    background-color: transparent;
+    background-color: rgb(252, 252, 252);
     width: 12rem !important;
+    border: none !important;
+    border-radius: 7px 11px 8px 10px / 9px 7px 11px 8px;
 }
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* background-color: rgb(238, 238, 238); */
+}
+
 
 .card-body {
     padding: 0 !important;
+}
+
+.card-text {
+    /* border: 1px solid rgba(139, 138, 138, 0.1); */
+    border-top: 1.5px solid #bbb9b9;
+    /* border-radius: 7px 11px 8px 10px / 9px 7px 11px 8px; */
+    padding: 5px;
+    font-family: "Roboto Mono", monospace;
 }
 
 .card a {
@@ -450,218 +377,309 @@ font-family: "Roboto Mono", monospace;
     color: inherit;
 }
 
-/* Floating cards use absolute positioning */
+/* moving mode */
 .floating-card {
-    position: absolute;
+    will-change: transform, left, top;
 }
 
-/* Reset to grid layout */
-.grid-enable {
-    position: static;
-    transform: none !important;
+.cards-are-moving .floating-card {
+    margin-top: 0 !important;
 }
 
-/* --- STORE ITEM --- */
 
-/* Store gallery */
-.shop-list {
-    font-family: "ABCROM";
-    font-size: 1.2rem;
+
+/* STORE ITEM PAGE */
+
+/* LEFT PANEL  */
+
+.left-panel-list {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    justify-content: center;
+    margin: 0 !important;
+    line-height: 1rem !important;
 }
 
-.shop-list a {
-    text-decoration: none !important;
-    color: black;
+.left-panel-list a,
+.right-panel a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.shop-list a:hover {
-    text-decoration: underline;
-    color: var(--sugo-color);
+.all-items-label {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 !important;
 }
 
-.all-items {
-    font-weight: 800;
+.list-item {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 !important;
+}
+
+.spacer-store-item {
+    height: 10vh;
+}
+
+/* RIGHT PANEL */
+
+.right-panel {
+    padding-left: 25px !important;
+}
+
+.item-label {
+    margin-bottom: 20px;
+}
+
+.item-label h1 {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.item-label .item-description {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.item-label .item-price {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 !important;
 }
 
 
-.store-gallery,
-.store-features {
-    height: 70vh;
+.store-main {
+    height: calc(100vh - 110px);
 }
 
-
-
-/* store accordion */
-
-.accordion-button {
-    background: none;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    padding: 4px;
-    font-size: 1.5rem;
-    color: #000000
+.store-layout {
+    height: 100%;
 }
 
-.accordion-button:not(.collapsed) {
-    background: none;
+.side-panel {
+    height: 100%;
+    overflow: hidden;
 }
 
-.accordion-header {
-    border: none;
-    margin: 0;
+.photo-panel {
+    height: 100%;
     padding: 0;
-    background-color: #ffffff;
 }
 
+.photo-scroll {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 1rem;
+}
+
+.photo-scroll img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* margin-bottom: 1rem; */
+}
+
+.cart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    max-width: 170px;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+/* SIZE RADIO BUTTONS */
+
+.size-title {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px !important;
+}
+
+.size-options {
+    display: flex;
+    gap: 22px;
+}
+
+.size-options input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.size-options label {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #1f1f1f;
+    background: transparent;
+    color: #111;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.size-options input[type="radio"]:checked+label {
+    background: #1f1f1f;
+    color: #fff;
+}
+
+/* KEY FEATURES */
+.key-feature {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+/* STORE ITEM ACCORDION */
+
+/* the visible part of the accordion collapsed */
+/* HEADER */
+.accordion-button {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: inherit;
+    position: relative;
+    padding: 0.2rem 3rem 0.2rem 0 !important;
+    min-height: auto !important;
+    line-height: 1.2;
+}
+
+/* BODY */
 .accordion-body {
-    font-size: 2rem;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 0.2rem 0 0.35rem 0 !important;
+    margin-top: 0 !important;
+    line-height: 1.4;
+
+
+}
+
+.accordion,
+.accordion-item,
+.accordion-button,
+.accordion-body {
+    background: transparent !important;
+    border: none !important;
+    font-family: "Roboto Mono", monospace;
+
 }
 
 .accordion-item {
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 0 !important;
 }
 
-.accordion-collapse {
-    border: none;
-    box-shadow: none;
+
+/* remove Bootstrap default arrow */
+.accordion-button::after {
+    content: "+" !important;
+    background-image: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: auto;
+    height: auto;
+    transform: none !important;
 }
 
+/* when open, show minus */
+.accordion-button:not(.collapsed)::after {
+    content: "−" !important;
+}
+
+/* optional: remove blue active background */
+.accordion-button:not(.collapsed) {
+    background: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+}
+
+/* optional: remove focus glow */
 .accordion-button:focus {
-    box-shadow: none;
+    box-shadow: none !important;
+    border-color: transparent;
 }
 
 
+/* CONTACTS AND SOCIAL MEDIA */
 
-/* ===================================================== */
-/* === ADDITIONS FOR LOGO LAYER + BLEND FIX (SAFE) ===== */
-/* ===================================================== */
-
-/* isolate blending ONLY where needed */
-#floating-cards-container {
-    isolation: isolate;
-}
-
-/* visual logo layer (does not affect layout or JS) */
-.sugo-logo-layer {
+.contacts-social {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    inset: 0;
-    background-image: url("../images/sugo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* z-index: 100; */
-    /* opacity: 0.1; */
-    pointer-events: none;
-    /* opacity: 0.3; */
+    bottom: 26px;
+    left: 24px;
+    z-index: 1100;
+    display: flex;
+    gap: 5px;
+}
+
+.contacts-social .icon {
+    font-size: 1.5rem;
+    color: #222;
+    background-color: #fbfbfb;
+    padding: 3px;
+    /* border: 0.2px solid black; */
+    border-radius: 5px;
+}
+
+.contacts-social .icon-manifesto {
+    font-size: 1.5rem;
+    color: #eeeeee;
+    /* background-color: #fa3f3f; */
+    padding: 3px;
+    /* border: 0.2px solid black; */
+    border-radius: 5px;
 }
 
 
-/* cards behind / ahead of logo */
-.behind-logo {
-    z-index: 50;
-}
+/* RADIO PAGE */
 
-.ahead-logo {
-    z-index: 150;
-}
-
-/* ensure blend text sits above logo */
-.card p,
-#store-control div,
-.manifesto-container h1,
-.manifesto-container h4,
-.manifesto-container p {
+iframe {
     position: relative;
-    z-index: 200;
-    font-weight: 600;
+    z-index: 20;
 }
 
-
-
-/* ------------------- Contact Modal & Toast------------------- */
-#toastMessage {
-    z-index: 11;
+#floating-rider {
+    position: fixed;
+    top: 140px;
+    left: 40px;
+    width: 120px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform, left, top;
+    transform-origin: center center;
 }
 
-.modal-header {
-    background-color: #004d00;
-}
-
-.modal-title {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.form-control {
-    width: 250px !important;
-}
-
-
-/* STORE ITEM RESIZE QUERY  */
-@media (max-width: 768px) {
-    .navbar-brand img {
-        width: 60px !important;
-        height: auto;
-    }
-
-    .shop-list {
-        display: none !important;
-    }
-
-    .store-gallery,
-    .store-features {
-        height: 60vh;
-    }
-
-    .store-item-row {
-        margin-top: 0px !important;
-    }
-
-    .store-gallery img {
-        /* width: 70vw !important; */
-    }
-
-}
-
-
-/* INDEX TOMATO IN COLUMN QUERY */
-@media (min-width: 780px) {
-    .tablet-spacer {
-        display: none;
-    }
-
-    .image-figure .overlay-text {
-        opacity: 0;
-        /* transition: opacity 0.3s ease; */
-    }
-
-    .page-name {
-        margin-top: 210px;
-        padding: 0px;
-        font-size: 2.5rem;
-        color: var(--secondary-color);
-        background: transparent;
-        z-index: 1001;
-    }
-
-    .image-figure img {
-        display: block;
-        max-width: 230px;
-        height: auto;
-    }
-
-}
-
-/* LAPTOP SPACERS QUERY */
-@media (max-width: 935px) {
-    .laptop-spacer {
-        display: none;
-    }
-
-}
+/* #floating-rider {
+    transform-origin: center center;
+} */

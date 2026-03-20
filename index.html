@@ -2,123 +2,87 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
-  <!-- BOOTSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
 
 </head>
 
-<body>
+<body class="index-body">
+    <main>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-evenly align-items-center min-vh-100 text-center">
 
-  <!-- NAVBAR -->
+                <!-- tomato cards -->
+
+                <!-- STORE -->
+                <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                    <div class="index-image-card">
+                        <a href="store.html">
+                        <img src="assets/images/tomato06.png" alt="Default view" class="img-default">
+                        <img src="assets/images/Sugo-Splash.png" alt="Hover view" class="img-hover">
+                        <div class="overlay-text">
+                            STORE
+                        </div>
+                        </a>
+                    </div>
+                </div>
 
 
-  <main>
+                <!-- MANIFESTO -->
+                <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                    <div class="index-image-card">
+                        <a href="manifesto.html">
+                        <img src="assets/images/tomato07.png" alt="Default view" class="img-default">
+                        <img src="assets/images/Sugo-Splash.png" alt="Hover view" class="img-hover">
+                        <div class="overlay-text">
+                            MANIFESTO
+                        </div>
+                        </a>
+                    </div>
+                </div>
 
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-center align-items-center min-vh-100 ">
+                <!-- RADIO -->
+                <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                    <div class="index-image-card">
+                        <a href="radio.html">
+                        <img src="assets/images/tomato08.png" alt="Default view" class="img-default">
+                        <img src="assets/images/Sugo-Splash.png" alt="Hover view" class="img-hover">
+                        <div class="overlay-text">
+                            RADIO
+                        </div>
+                        </a>
+                    </div>
+                </div>
 
 
-
-
-
-
-
-
-        <!-- MANIFESTO TOMATO -->
-        <div class="col-12 col-md-2 tomato-container d-flex h-100 align-items-center justify-content-center  ">
-          <a href="manifesto.html">
-            <div class="image-figure">
-              <img src="assets/images/menu-manifesto.png" alt="A photo of a tomato" class="img-fluid main-tomato"
-                loading="lazy">
-              <div class="overlay-text">
-                <span class="page-name">MANIFESTO</span>
-              </div>
-              <div class="overlay-image text-center justify-content-center">
-                <img src="assets/images/Sugo-Splash.png"
-                  alt="An illustration of a smashed tomato, appearing as a splash when you click the tomato image"
-                  class="img-fluid" loading="lazy">
-              </div>
             </div>
-          </a>
         </div>
+    </main>
 
-        <div class="col-1 laptop-spacer"> </div>
-
-        <!-- At 780px screen the layout was wrong, 2 tomatoes and 1 down -->
-        <div class="col-12 tablet-spacer"> </div>
-
-        <!-- STORE TOMATO -->
-        <div class="col-12 col-md-2 tomato-container d-flex h-100 align-items-center justify-content-center ">
-          <a href="store.html">
-            <div class="image-figure">
-              <img src="assets/images/menu-store.png" alt="A photo of a tomato" class="img-fluid main-tomato"
-                loading="lazy">
-              <div class="overlay-text">
-                <span class="page-name">STORE</span>
-              </div>
-              <div class="overlay-image text-center justify-content-center">
-                <img src="assets/images/Sugo-Splash.png"
-                  alt="An illustration of a smashed tomato, appearing as a splash when you click the tomato image"
-                  class="img-fluid" loading="lazy">
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-1 laptop-spacer"> </div>
+    <!-- Background layer -->
+    <!-- <div class="sugo-logo-layer">   </div> -->
 
 
-        <!-- At 780px screen the layout was wrong, 2 tomatoes and 1 down -->
-        <div class="col-12 tablet-spacer"> </div>
-
-
-        <!-- RADIO TOMATO -->
-        <div class="col-12 col-md-2 tomato-container d-flex h-100 align-items-center justify-content-center  ">
-          <a href="radio.html">
-            <div class="image-figure">
-              <img src="assets/images/menu-radio.png" alt="A photo of a tomato" class="img-fluid main-tomato"
-                loading="lazy">
-              <div class="overlay-text">
-                <span class="page-name">RADIO</span>
-              </div>
-              <div class="overlay-image text-center justify-content-center">
-                <img src="assets/images/Sugo-Splash.png"
-                  alt="An illustration of a smashed tomato, appearing as a splash when you click the tomato image"
-                  class="img-fluid" loading="lazy">
-              </div>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </main>
-
-
-
-
-
-
-  <!-- Fontawsome -->
+    <!-- Fontawsome -->
   <script src="https://kit.fontawesome.com/9e128b115a.js" crossorigin="anonymous"></script>
 
   <!-- Bootstrap JavaScript -->
@@ -129,6 +93,5 @@
   <!-- JS -->
   <script src="assets/js/js.js"></script>
 
-</body>
 
-</html>
+</body>
