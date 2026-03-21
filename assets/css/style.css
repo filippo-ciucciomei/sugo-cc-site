@@ -340,7 +340,6 @@
 
 .motion-btn:hover {
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.95);
 }
 
 .motion-btn:active {
@@ -837,8 +836,13 @@ iframe {
         padding: 20px 24px 26px 24px;
         display: flex;
         gap: 5px;
-        align-self: flex-start;
+        align-self: center;
         z-index: 1;
+        /* overflow: auto; */
+    }
+
+    .contacts-social a {
+        margin: 0 5px;
     }
 
     .store-controls {
