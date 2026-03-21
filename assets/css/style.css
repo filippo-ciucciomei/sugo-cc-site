@@ -261,6 +261,9 @@
 .manifesto-box {
     position: relative;
     z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .manifesto-title {
@@ -276,6 +279,7 @@
     z-index: 1;
     opacity: 0.9;
     position: relative;
+    border-bottom: rgba(244, 244, 242, 0.2) solid 1.5px;
 }
 
 .manifesto-text {
@@ -283,11 +287,11 @@
     color: white;
     font-weight: 100 !important;
     text-align: justify;
-    text-shadow:
+    /* text-shadow:
         -1px -1px 0 rgba(165, 0, 0, 0.6),
         1px -1px 0 rgba(165, 0, 0, 0.6),
         -1px 1px 0 rgba(165, 0, 0, 0.6),
-        1px 1px 0 rgba(165, 0, 0, 0.6);
+        1px 1px 0 rgba(165, 0, 0, 0.6); */
     z-index: 1;
     margin-bottom: 80px !important;
     position: relative;
@@ -303,12 +307,13 @@
 
     .manifesto-text {
         font-size: 0.8rem;
-        text-shadow:
+        /* text-shadow:
             -1px -1px 0 rgba(165, 0, 0, 0.6),
             1px -1px 0 rgba(165, 0, 0, 0.6),
             -1px 1px 0 rgba(165, 0, 0, 0.6),
-            1px 1px 0 rgba(165, 0, 0, 0.6);
+            1px 1px 0 rgba(165, 0, 0, 0.6); */
         text-align: justify;
+        margin-bottom: 20px !important;
     }
 
 }
@@ -411,6 +416,9 @@
 /* FLOATING CARDS MEDIA QUERY */
 
 @media (max-width: 768px) {
+    .cards-column {
+    margin-bottom: 20px !important;
+}
 
     .card {
         width: 9rem !important;
@@ -481,7 +489,7 @@
     .right-panel {
         padding-left: 0 !important;
         margin-top: 20px !important;
-        margin-bottom: 70px !important;
+        margin-bottom: 20px !important;
     }
 }
 
