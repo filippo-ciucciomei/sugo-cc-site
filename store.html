@@ -44,7 +44,7 @@
         </div>
     </nav>
 
-  
+
 
     <div class="store-controls" aria-label="Store motion controls">
         <button id="playCards" class="motion-btn" type="button" aria-label="Play">
@@ -68,7 +68,9 @@
                     <!-- CARD 1 -->
                     <div class="card floating-card mt-3 behind-logo">
                         <a href="store-item01.html">
-                            <img src="assets/images/store/assos-kit.png" class="card-img-top">
+                            <div class="card-img-top-wrapper d-flex align-items-center">
+                                <img src="assets/images/store/assos-kit.png" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">Assos x Sugo kit <br> £160</p>
                             </div>
@@ -78,7 +80,9 @@
                     <!-- CARD 2 -->
                     <div class="card floating-card mt-3 ahead-logo">
                         <a href="store-item01.html">
-                            <img src="assets/images/store/skinsuite.png" class="card-img-top">
+                            <div class="card-img-top-wrapper d-flex align-items-center">
+                                <img src="assets/images/store/skinsuite.png" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">Santini Skinsuit<br> £150</p>
                             </div>
@@ -88,7 +92,9 @@
                     <!-- CARD 3 -->
                     <div class="card floating-card mt-3 behind-logo">
                         <a href="store-item01.html">
-                            <img src="assets/images/store/socks.png" class="card-img-top">
+                            <div class="card-img-top-wrapper d-flex align-items-center">
+                                <img src="assets/images/store/socks.png" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">Sugo Socks<br> £25</p>
                             </div>
@@ -98,7 +104,9 @@
                     <!-- CARD 4 -->
                     <div class="card floating-card mt-3 ahead-logo">
                         <a href="store-item01.html">
-                            <img src="assets/images/store/tshirt.png" class="card-img-top">
+                            <div class="card-img-top-wrapper d-flex align-items-center">
+                                <img src="assets/images/store/tshirt.png" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">T-shirt<br> £30</p>
                             </div>
@@ -108,7 +116,9 @@
                     <!-- CARD 5 -->
                     <div class="card floating-card mt-3 behind-logo">
                         <a href="store-item01.html">
-                            <img src="assets/images/store/stickers.png" class="card-img-top">
+                            <div class="card-img-top-wrapper d-flex align-items-center">
+                                <img src="assets/images/store/stickers.png" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">Stickers Pack<br> £10</p>
                             </div>
@@ -118,7 +128,9 @@
                     <!-- CARD 6 -->
                     <div class="card floating-card mt-3 ahead-logo">
                         <a href="store-item01.html">
-                            <img src="assets/images/store/cap.png" class="card-img-top">
+                            <div class="card-img-top-wrapper d-flex align-items-center">
+                                <img src="assets/images/store/cap.png" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">Sugo cap<br> £30</p>
                             </div>
@@ -133,7 +145,7 @@
 
     <!-- CONTACTS AND SOCIAL MEDIA -->
     <div class="contacts-social" aria-label="Store motion controls">
-       
+
         <a href="https://www.instagram.com/sugo.cc" target="_blank" rel="noopener" aria-label="Instagram">
             <i class="fa-brands fa-instagram icon"></i>
         </a>
@@ -209,7 +221,9 @@
 
             function captureGridPositions() {
                 return cards.map(card => {
-                    const rect = card.getBoundingClientRect();
+                    const img = card.querySelector('.card-img-top');
+                    const rect = img.getBoundingClientRect();
+
                     return {
                         card,
                         left: rect.left,
@@ -221,30 +235,33 @@
             }
 
             function randomVelocity() {
-                const min = 0.4;
-                const max = 0.9;
+                const min = 0.6;
+                const max = 1.5;
                 const value = Math.random() * (max - min) + min;
                 return Math.random() > 0.5 ? value : -value;
             }
 
             function activateFloatingMode() {
-                const positions = captureGridPositions();
                 body.classList.add('cards-are-moving');
 
-                positions.forEach(({ card, left, top, width, height }, index) => {
-                    card.style.position = 'fixed';
-                    card.style.left = `${left}px`;
-                    card.style.top = `${top}px`;
-                    card.style.margin = '0';
-                    card.style.zIndex = 20 + index;
+                requestAnimationFrame(() => {
+                    const positions = captureGridPositions();
 
-                    state.set(card, {
-                        x: left,
-                        y: top,
-                        vx: randomVelocity(),
-                        vy: randomVelocity(),
-                        width,
-                        height
+                    positions.forEach(({ card, left, top, width, height }, index) => {
+                        card.style.position = 'fixed';
+                        card.style.left = `${left}px`;
+                        card.style.top = `${top}px`;
+                        card.style.margin = '0';
+                        card.style.zIndex = 20 + index;
+
+                        state.set(card, {
+                            x: left,
+                            y: top,
+                            vx: randomVelocity(),
+                            vy: randomVelocity(),
+                            width,
+                            height
+                        });
                     });
                 });
             }
