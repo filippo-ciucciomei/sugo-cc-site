@@ -47,8 +47,8 @@
     height: 100vh;
     width: 100vw;
     inset: 0;
-    background-image: url("../images/sugo-transparent.png");
-    opacity: 1;
+    background-image: url("../images/sugo.png");
+    opacity: 0.4 !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,7 +76,7 @@
     width: 100vw;
     inset: 0;
     background-image: url("../images/sugo-boiling.gif");
-    opacity: 1;
+    opacity: 0.98;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +99,7 @@
 }
 
 .index-body {
-    background-image: url("../images/sugo.png");
+    /* background-image: url("../images/sugo.png"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -109,8 +109,79 @@
 
 /* INDEX-PAGE */
 
-.index-body .col-md-2 {
-    min-width: 235px !important;
+.index-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* keeps the spacing between the 3 images */
+    flex-wrap: nowrap; /* prevents the 2-on-top / 1-below layout */
+}
+
+.index-link-item {
+    flex: 0 0 auto;
+}
+
+/* NEW TAGS */
+
+.index-image-card {
+    position: relative;
+    height: 200px;
+    width: 230px;
+    overflow: visible;
+}
+
+.index-image-card a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.index-image-card .img-default {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.hover-tag {
+    position: absolute;
+    width: 132px;
+    height: auto;
+    right: 8px;
+    bottom: 6px;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@media (hover: none) { 
+    .hover-tag {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.index-image-card:hover .hover-tag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* END NEW TAGS */
+
+/* mobile/tablet: switch straight to column */
+@media (max-width: 900px) {
+    .index-links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }
 
 .index-image-card {
@@ -120,31 +191,33 @@
     overflow: hidden;
 }
 
-.index-image-card img,
+/* .index-image-card img,
 .index-image-card .overlay-text {
     position: absolute;
-}
+} */
 
-.index-image-card img {
+/* .index-image-card img {
     top: 50%;
     left: 50%;
     width: 200px;
     height: auto;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
-}
+} */
 
 .img-default {
     opacity: 1;
     z-index: 1;
 }
 
-.img-hover {
+
+
+/* .img-hover {
     opacity: 0;
     z-index: 2;
-}
+} */
 
-.overlay-text {
+/* .overlay-text {
     font-family: "Lato", sans-serif;
     z-index: 3;
     top: 50%;
@@ -157,19 +230,19 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-}
+} */
 
-.index-image-card:hover .img-default {
+/* .index-image-card:hover .img-default {
     opacity: 0;
-}
+} */
 
-.index-image-card:hover .img-hover {
+/* .index-image-card:hover .img-hover {
     opacity: 0.6;
-}
+} */
 
-.index-image-card:hover .overlay-text {
+/* .index-image-card:hover .overlay-text {
     opacity: 1;
-}
+} */
 
 
 /* NAVBAR */
@@ -301,7 +374,8 @@
 .manifesto-text {
     font-family: "Roboto Mono", monospace;
     color: white;
-    font-weight: 100 !important;
+    /* font-size: 0.9rem; */
+    font-weight: 200 !important;
     text-align: justify;
     /* text-shadow:
         -1px -1px 0 rgba(165, 0, 0, 0.6),
@@ -354,7 +428,7 @@
     position: fixed;
     top: 26px;
     right: 24px;
-    z-index: 2;
+    z-index: 999;
     display: flex;
     gap: 10px;
 }
