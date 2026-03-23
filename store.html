@@ -9,8 +9,12 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
+    <!-- <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"> -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:wght@200;300;400;500&display=swap"
         rel="stylesheet">
 
     <!-- BOOTSTRAP -->
@@ -36,10 +40,10 @@
             </button>
 
             <div class="nav-dropdown" id="navDropdown">
-                <a href="index.html">Home</a>
-                <a href="manifesto.html">Manifesto</a>
-                <a href="store.html">Store</a>
-                <a href="radio.html">Radio</a>
+                <a href="index.html">home</a>
+                <a href="manifesto.html">manifesto</a>
+                <a href="store.html">store</a>
+                <a href="radio.html">radio</a>
             </div>
         </div>
     </nav>
@@ -187,6 +191,8 @@
         });
     </script>
 
+
+
     <!-- CARDS MOTION JS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -205,7 +211,6 @@
                 card.style.top = '';
                 card.style.margin = '';
                 card.style.zIndex = '';
-                card.style.transform = '';
             }
 
             function resetToGrid() {
@@ -217,26 +222,13 @@
                 cards.forEach(card => {
                     clearCardInlineStyles(card);
                 });
-            }
 
-            function captureGridPositions() {
-                return cards.map(card => {
-                    const img = card.querySelector('.card-img-top');
-                    const rect = img.getBoundingClientRect();
-
-                    return {
-                        card,
-                        left: rect.left,
-                        top: rect.top,
-                        width: rect.width,
-                        height: rect.height
-                    };
-                });
+                state.clear();
             }
 
             function randomVelocity() {
-                const min = 0.6;
-                const max = 1.5;
+                const min = 0.7;
+                const max = 1.7;
                 const value = Math.random() * (max - min) + min;
                 return Math.random() > 0.5 ? value : -value;
             }
@@ -245,24 +237,26 @@
                 body.classList.add('cards-are-moving');
 
                 requestAnimationFrame(() => {
-                    const positions = captureGridPositions();
+                    cards.forEach((card, index) => {
+                        const img = card.querySelector('.card-img-top');
+                        const rect = img.getBoundingClientRect();
 
-                    positions.forEach(({ card, left, top, width, height }, index) => {
                         card.style.position = 'fixed';
-                        card.style.left = `${left}px`;
-                        card.style.top = `${top}px`;
+                        card.style.left = `${rect.left}px`;
+                        card.style.top = `${rect.top}px`;
                         card.style.margin = '0';
                         card.style.zIndex = 20 + index;
 
                         state.set(card, {
-                            x: left,
-                            y: top,
+                            x: rect.left,
+                            y: rect.top,
                             vx: randomVelocity(),
-                            vy: randomVelocity(),
-                            width,
-                            height
+                            vy: randomVelocity()
                         });
                     });
+
+                    isMoving = true;
+                    animationId = requestAnimationFrame(animateCards);
                 });
             }
 
@@ -274,31 +268,46 @@
                     const s = state.get(card);
                     if (!s) return;
 
-                    s.x += s.vx;
-                    s.y += s.vy;
+                    const img = card.querySelector('.card-img-top');
+                    const cardRect = card.getBoundingClientRect();
+                    const imgRect = img.getBoundingClientRect();
 
-                    if (s.x <= 0) {
-                        s.x = 0;
+                    const offsetX = imgRect.left - cardRect.left;
+                    const offsetY = imgRect.top - cardRect.top;
+
+                    let nextX = s.x + s.vx;
+                    let nextY = s.y + s.vy;
+
+                    let visibleLeft = nextX + offsetX;
+                    let visibleTop = nextY + offsetY;
+                    let visibleRight = visibleLeft + imgRect.width;
+                    let visibleBottom = visibleTop + imgRect.height;
+
+                    if (visibleLeft <= 0) {
+                        nextX = -offsetX;
                         s.vx *= -1;
                     }
 
-                    if (s.x + s.width >= vw) {
-                        s.x = vw - s.width;
+                    if (visibleRight >= vw) {
+                        nextX = vw - offsetX - imgRect.width;
                         s.vx *= -1;
                     }
 
-                    if (s.y <= 0) {
-                        s.y = 0;
+                    if (visibleTop <= 0) {
+                        nextY = -offsetY;
                         s.vy *= -1;
                     }
 
-                    if (s.y + s.height >= vh) {
-                        s.y = vh - s.height;
+                    if (visibleBottom >= vh) {
+                        nextY = vh - offsetY - imgRect.height;
                         s.vy *= -1;
                     }
 
-                    card.style.left = `${s.x}px`;
-                    card.style.top = `${s.y}px`;
+                    s.x = nextX;
+                    s.y = nextY;
+
+                    card.style.left = `${Math.round(s.x)}px`;
+                    card.style.top = `${Math.round(s.y)}px`;
                 });
 
                 animationId = requestAnimationFrame(animateCards);
@@ -306,14 +315,8 @@
 
             function startMoving() {
                 if (isMoving) return;
-
                 resetToGrid();
-
-                requestAnimationFrame(() => {
-                    activateFloatingMode();
-                    isMoving = true;
-                    animationId = requestAnimationFrame(animateCards);
-                });
+                activateFloatingMode();
             }
 
             function stopMoving() {
@@ -325,7 +328,8 @@
 
             window.addEventListener('resize', () => {
                 if (isMoving) {
-                    startMoving();
+                    resetToGrid();
+                    activateFloatingMode();
                 }
             });
 

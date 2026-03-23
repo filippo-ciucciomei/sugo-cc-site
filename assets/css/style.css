@@ -48,7 +48,7 @@
     width: 100vw;
     inset: 0;
     background-image: url("../images/sugo.png");
-    opacity: 0.4 !important;
+    opacity: 0.6 !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,12 +62,12 @@
     width: 100vw;
     inset: 0;
     background-image: url("../images/sugo-transparent.png");
-    opacity: 0.1;
+    opacity: 0.5;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .sugo-logo-layer-manifesto {
@@ -75,7 +75,7 @@
     height: 100vh;
     width: 100vw;
     inset: 0;
-    background-image: url("../images/sugo-boiling.gif");
+    background-image: url("../images/spaghetti-al-sugo-2-copy.png");
     opacity: 0.98;
     background-size: cover;
     background-position: center;
@@ -113,8 +113,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem; /* keeps the spacing between the 3 images */
-    flex-wrap: nowrap; /* prevents the 2-on-top / 1-below layout */
+    gap: 2rem;
+    /* keeps the spacing between the 3 images */
+    flex-wrap: nowrap;
+    /* prevents the 2-on-top / 1-below layout */
 }
 
 .index-link-item {
@@ -161,7 +163,7 @@
     z-index: 2;
 }
 
-@media (hover: none) { 
+@media (hover: none) {
     .hover-tag {
         opacity: 1;
         transform: translateY(0);
@@ -350,36 +352,59 @@
 .manifesto-box {
     position: relative;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.2); */
     padding: 10px 20px;
     border-radius: 5px;
+    /* background-image: url("../images/spaghetti-al-sugo-2-copy.png"); */
+    background-size: cover;
+    height: calc(100vh - 170px);
+    overflow: scroll;
+    /* border: 1.5px solid rgba(0, 0, 0, 0.1); */
 }
 
 .manifesto-title {
     margin-top: 0px !important;
     margin-bottom: 30px;
-    padding: 0px;
+    padding: 10px 0 20px 0;
     font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    /* font-weight: 400; */
     font-style: normal;
-    font-size: 6.5rem;
-    color: white;
+    font-size: 5.5rem;
+    /* color: white; */
     background: transparent;
     z-index: 1;
     opacity: 0.9;
     position: relative;
-    border-bottom: rgba(244, 244, 242, 0.2) solid 1.5px;
+    border-bottom: rgb(0, 0, 0) solid 1.5px;
 }
 
 .manifesto-text {
     font-family: "Roboto Mono", monospace;
-    color: white;
+    /* letter-spacing: 0.2rem; */
+    /* color: white; */
     /* font-size: 0.9rem; */
-    font-weight: 200 !important;
+    /* font-weight: 350 !important; */
     text-align: justify;
     z-index: 1;
-    margin-bottom: 80px !important;
+    margin-bottom: 30px !important;
     position: relative;
+}
+
+.download-btn a{
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.8rem;
+    padding: 7px 14px;
+    font-weight: 400;
+    text-decoration: none !important;
+    background-color: #cccccc;
+    border: 1px solid rgba(0, 0, 0, 1);
+    color: rgb(0, 0, 0) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 /* MEDIA QUERIES MANIFESTO */
@@ -471,6 +496,9 @@
     height: var(--card-h) !important;
     width: var(--card-w) !important;
     padding: var(--card-pad) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-img-top {
@@ -501,7 +529,7 @@
 
 /* moving mode */
 .floating-card {
-    will-change: transform, left, top;
+    will-change: left, top;
     position: relative;
     z-index: 1;
 }
@@ -516,17 +544,34 @@
     overflow: visible;
 }
 
+.cards-are-moving .floating-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    overflow: visible;
+    line-height: 0;
+}
+
 .cards-are-moving .floating-card a {
-    display: inline-block;
+    display: block;
+    line-height: 0;
 }
 
 .cards-are-moving .floating-card .card-img-top-wrapper {
     width: auto !important;
     height: auto !important;
     padding: 0 !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    line-height: 0;
+}
+
+.cards-are-moving .floating-card .card-img-top {
+    display: block;
+    width: calc(var(--card-w) - (var(--card-pad) * 2)) !important;
+    height: calc(var(--card-h) - (var(--card-pad) * 2)) !important;
+    object-fit: contain;
 }
 
 .cards-are-moving .floating-card .card-img-top {
@@ -541,7 +586,6 @@
 }
 
 /* FLOATING CARDS MEDIA QUERY */
-
 @media (max-width: 768px) {
     .cards-column {
         margin-bottom: 20px !important;
@@ -593,15 +637,16 @@
 .all-items-label {
     font-family: "Roboto Mono", monospace;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 !important;
 }
 
 .list-item {
     font-family: "Roboto Mono", monospace;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0 !important;
+    line-height: 0.7rem !important;
 }
 
 .spacer-store-item {
@@ -627,23 +672,27 @@
 }
 
 .item-label h1 {
-    font-family: "Roboto Mono", monospace;
+    /* font-family: "Roboto Mono", monospace; */
     font-size: 1.6rem;
-    font-weight: 600;
+    /* font-weight: 600; */
     margin: 0 !important;
+
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .item-label .item-description {
     font-family: "Roboto Mono", monospace;
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0 !important;
 }
 
 .item-label .item-price {
     font-family: "Roboto Mono", monospace;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0 !important;
 }
 
@@ -748,7 +797,7 @@
 .size-title {
     font-family: "Roboto Mono", monospace;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 10px !important;
 }
 
@@ -788,7 +837,7 @@
 .key-feature {
     font-family: "Roboto Mono", monospace;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 20px !important;
     margin-bottom: 10px !important;
 }
@@ -799,7 +848,7 @@
 .accordion-button {
     font-family: "Roboto Mono", monospace;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 0.02em;
     background: transparent !important;
     box-shadow: none !important;
@@ -807,6 +856,7 @@
     position: relative;
     padding: 0.2rem 3rem 0.2rem 0 !important;
     min-height: auto !important;
+    max-width: 500px;
     line-height: 1.2;
 }
 
@@ -814,10 +864,14 @@
 .accordion-body {
     font-family: "Roboto Mono", monospace;
     font-size: 0.85rem;
-    font-weight: 400;
+    opacity: 0.85;
+    font-weight: 300;
     padding: 0.2rem 0 0.35rem 0 !important;
     margin-top: 0 !important;
     line-height: 1.4;
+    max-width: 410px;
+    text-align: justify;
+
 }
 
 .accordion,
@@ -881,7 +935,7 @@
 .contacts-social .icon {
     font-size: 1.5rem;
     color: #222;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     padding: 3px;
     border-radius: 5px;
 }
