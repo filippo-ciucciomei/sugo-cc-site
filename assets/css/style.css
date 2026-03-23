@@ -354,8 +354,15 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 40px;
+  height: 21px;
+}
+
+.manifesto-toggle {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 2;
 }
 
 /* FAKE BORDER (rotated) */
@@ -381,19 +388,19 @@
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background-color: #ccc;
+  background-color: #e5e0b8;
   transition: .4s;
-  border-radius: 34px;
+  border-radius: 23px;
 }
 
 /* knob */
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 17px;
+  width: 17px;
+  left: 2px;
+  bottom: 2px;
   background-color: white;
   transition: .4s;
   border-radius: 50%;
@@ -405,12 +412,12 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(19px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 23px;
 }
 
 .slider.round:before {
@@ -543,6 +550,8 @@ body.spaghetti-mode .manifesto-box {
     display: flex;
     gap: 10px;
 }
+
+
 
 .motion-btn:hover {
     transform: scale(1.05);
