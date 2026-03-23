@@ -75,7 +75,8 @@
     height: 100vh;
     width: 100vw;
     inset: 0;
-    background-image: url("../images/spaghetti-al-sugo-2-copy.png");
+    /* background-image: url("../images/spaghetti-al-sugo-2-copy.png"); */
+    background-image: url("../images/sugo-boiling.gif");
     opacity: 0.98;
     background-size: cover;
     background-position: center;
@@ -349,13 +350,101 @@
 
 /* MANIFESTO */
 
+/* toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* FAKE BORDER (rotated) */
+/* .switch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  transform: rotate(-4.45deg);
+  pointer-events: none;
+} */
+
+/* Keep input hidden */
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* REAL SWITCH */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+/* knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* states */
+input:checked + .slider {
+  background-color: #9c4d4d;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* end toggle */
+
+/* THEME TOGGLE TAGS */
+/* DEFAULT = sugo boiling (already exists) */
+
+body.spaghetti-mode .sugo-logo-layer-manifesto {
+    background-image: url("../images/spaghetti-al-sugo-2-copy.png");
+}
+
+/* DEFAULT (already white) */
+
+body.spaghetti-mode .manifesto-title,
+body.spaghetti-mode .manifesto-text {
+    color: #111;
+    border-color: #111;
+}
+
+body.spaghetti-mode .manifesto-box {
+    background-image: url("../images/spaghetti-al-sugo-2-copy.png");
+}
+
 .manifesto-box {
     position: relative;
     z-index: 1;
     /* background-color: rgba(255, 255, 255, 0.2); */
     padding: 10px 20px;
     border-radius: 5px;
-    background-image: url("../images/spaghetti-al-sugo-2-copy.png");
+    /* background-image: url("../images/spaghetti-al-sugo-2-copy.png"); */
+    background-image: url("../images/sugo-boiling.gif");
     background-size: cover;
     height: calc(100vh - 170px);
     overflow: scroll;
@@ -367,26 +456,26 @@
     margin-bottom: 30px;
     padding: 10px 0 20px 0;
     font-family: "Titillium Web", sans-serif;
-    font-weight: 300;
+    font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1;
     /* font-weight: 400; */
     font-style: normal;
     font-size: 5.5rem;
-    /* color: white; */
+    color: white;
     background: transparent;
     z-index: 1;
     opacity: 0.9;
     position: relative;
-    border-bottom: rgb(0, 0, 0) solid 1.5px;
+    border-bottom: rgb(255, 255, 255) solid 1px;
 }
 
 .manifesto-text {
     font-family: "Roboto Mono", monospace;
     /* letter-spacing: 0.2rem; */
-    /* color: white; */
-    /* font-size: 0.9rem; */
-    /* font-weight: 350 !important; */
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 350 !important;
     text-align: justify;
     z-index: 1;
     margin-bottom: 30px !important;
@@ -395,8 +484,8 @@
 
 .download-btn a{
     font-family: "Roboto Mono", monospace;
-    font-size: 0.8rem;
-    padding: 7px 14px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
     font-weight: 400;
     text-decoration: none !important;
     background-color: #cccccc;

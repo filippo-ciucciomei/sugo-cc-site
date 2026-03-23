@@ -17,7 +17,9 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:wght@200;300;400;500&display=swap"
         rel="stylesheet">
 
-        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&family=Roboto+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -49,6 +51,13 @@
             </div>
         </div>
     </nav>
+
+    <div class="store-controls" aria-label="Store motion controls">
+        <label class="switch">
+            <input type="checkbox" id="manifestoToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
 
     <!-- MANIFESTO -->
     <main>
@@ -129,9 +138,10 @@
                         </p>
 
                         <div class="download-btn text-end">
-                            <a href="assets/docs/Sugo-manifesto-2026.pdf" target="_blank" download="SUGO_MANIFESTO.pdf" aria-label="Download the manifesto as a PDF">
-                            DOWNLOAD
-                            <i class="fa-solid fa-cloud-arrow-down"></i>
+                            <a href="assets/docs/Sugo-manifesto-2026.pdf" target="_blank" download="SUGO_MANIFESTO.pdf"
+                                aria-label="Download the manifesto as a PDF">
+                                DOWNLOAD
+                                <i class="fa-solid fa-cloud-arrow-down"></i>
                         </div>
                     </div>
                 </div>
@@ -187,6 +197,16 @@
         });
     </script>
 
+    <!-- toggle theme -->
+
+    <script>
+        const toggle = document.getElementById("manifestoToggle");
+        const body = document.body;
+
+        toggle.addEventListener("change", () => {
+            body.classList.toggle("spaghetti-mode", toggle.checked);
+        });
+    </script>
 
     <!-- Fontawsome -->
     <script src="https://kit.fontawesome.com/9e128b115a.js" crossorigin="anonymous"></script>
