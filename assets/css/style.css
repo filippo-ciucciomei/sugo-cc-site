@@ -411,6 +411,11 @@
 
 @media (max-width: 768px) {
 
+    .manifesto-box {
+        padding: 5px 10px
+    }
+
+
     .manifesto-title {
         font-size: 3.5rem;
     }
