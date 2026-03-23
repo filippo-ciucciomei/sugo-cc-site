@@ -355,7 +355,7 @@
     /* background-color: rgba(255, 255, 255, 0.2); */
     padding: 10px 20px;
     border-radius: 5px;
-    /* background-image: url("../images/spaghetti-al-sugo-2-copy.png"); */
+    background-image: url("../images/spaghetti-al-sugo-2-copy.png");
     background-size: cover;
     height: calc(100vh - 170px);
     overflow: scroll;
@@ -413,6 +413,8 @@
 
     .manifesto-box {
         padding: 0px !important;
+        background-image: none !important;
+        height: calc(100vh - 200px);
     }
 
 
