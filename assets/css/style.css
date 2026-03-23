@@ -359,9 +359,9 @@
 }
 
 .manifesto-toggle {
-    position: absolute;
-    top: 15px;
-    right: 10px;
+    position: fixed;
+    top: 75px;
+    right: 17.5%;
     z-index: 2;
 }
 
@@ -506,6 +506,11 @@ body.spaghetti-mode .manifesto-box {
 /* MEDIA QUERIES MANIFESTO */
 
 @media (max-width: 768px) {
+
+    .manifesto-toggle {
+    right: 45px;
+    top: 50px;
+}
 
     .manifesto-box {
         padding: 0px !important;
