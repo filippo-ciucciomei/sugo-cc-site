@@ -76,7 +76,7 @@
     width: 100vw;
     inset: 0;
     /* background-image: url("../images/spaghetti-al-sugo-2-copy.png"); */
-    background-image: url("../images/sugo-boiling.gif");
+    background-image: url("../images/sugo-boiling02.gif");
     opacity: 0.98;
     background-size: cover;
     background-position: center;
@@ -451,7 +451,7 @@ body.spaghetti-mode .manifesto-box {
     padding: 10px 20px;
     border-radius: 5px;
     /* background-image: url("../images/spaghetti-al-sugo-2-copy.png"); */
-    background-image: url("../images/sugo-boiling.gif");
+    background-image: url("../images/sugo-boiling02.gif");
     background-size: cover;
     height: calc(100vh - 170px);
     overflow: scroll;
